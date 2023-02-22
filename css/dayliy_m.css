@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+.sec01 {
+    padding: 50px 20px;
+}
+
+.sec01 .copy::before,
+.sec01 .copy::after {
+    display: none;
+}
+
+.sec02 .box {
+    flex: 1 1 100%;
+}
+
+.sec02 .box.b01 {
+    order: 1;
+}
+
+.sec02 .box.b02 {
+    flex : 1 1 50%;
+    order: 2;
+}
+
+.sec02 .box.b03 {
+    order: 4;
+    margin: 0;
+}
+
+.sec02 .box.b04 {
+    flex: 1 1 50%;
+    order: 3;
+}
+
+.sec02 .box.b05 {
+    order: 6;
+}
+
+.sec02 .box.b06 {
+    width : 100%;
+    order: 5;
+}
+
+.sec02 .box.b07 {
+    order: 7;
+}
+
+.sec02 .box.b08 {
+    order: 8;
+}
+
+.sec02 .box.b09 {
+    flex : 1 1 50%;
+    order: 10;
+}
+
+.sec02 .box.b10 {
+    flex: 1 1 50%;
+    order: 9;
+    margin: 0;
+}
+
+.sec02 .box.b11 {
+    order: 11;
+    margin: 0;
+}
