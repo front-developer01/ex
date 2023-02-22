@@ -209,12 +209,28 @@ var swiper = new Swiper(".agency", {
   },
 });
 
-// $(".gnb01 > li > a").unbind("hover").hover(function () {
-//   $(this).next().stop(true).slideToggle(300);
-//   // this 다음 요소를 슬라이드토글
-//   $(".gnb01 > li > a").not(this).next().slideUp(300);
-//   // this가 아니라면 다음 요소는 슬라이드업
-//   return false;
-//   // a href="#"을 클릭했을때 목적지가 없어서 리프레시 되는것을 막음
+window.onload = () => {}
+  const gnb = document.querySelector("ul.gnb01");
+  function addOn() {
+      // this.classList.add("on");
+      gnb.classList.add("on");
+      // .classList는 IE9이하 버전에서는 작동하지 않는다.
+  }
+  let removeOn = () => {
+      gnb.classList.remove("on");
+  };
+  const mMenuBt = document.querySelector(".mMenuBt");
+  const closeBt = document.querySelector(".close");
+  
+  mMenuBt.addEventListener('click', addOn);
+  closeBt.addEventListener('click', removeOn);
+
+//   $(document).ready(function() {
+//     $(".gnb01 > li > a").click(function() {
+//         $(this).next().addBack().toggleClass("on").end()
+//         .not(this).removeClass("on").end()
+//         .parent().siblings().not(this).removeClass("on");
+//         return false;
+//     });
 // });
 

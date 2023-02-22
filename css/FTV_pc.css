@@ -47,9 +47,9 @@ nav.inner {
     align-items: center;
 }
 
-.inner.fa-solid.fa-bars {
+header .inner span.outlined {
     display: none;
-}
+  }
 
 nav a.logo {
     width: 100px;
