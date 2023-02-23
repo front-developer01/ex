@@ -20,6 +20,10 @@ var swiper = new Swiper(".banner", {
     spaceBetween: 0,
     breakpoints: {
       431: {
+      slidesPerView: 4,
+      spaceBetween: 0, 
+    },
+      1200: {
       slidesPerView: 5,
       spaceBetween: 0, 
     },
@@ -37,8 +41,12 @@ var swiper = new Swiper(".banner", {
     spaceBetween: 5,
     breakpoints: {
       431: {
-      slidesPerView: 4,
-      spaceBetween: 40, 
+      slidesPerView: 3,
+      spaceBetween: 30, 
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 40, 
       },
     },
   });
@@ -49,8 +57,12 @@ var swiper = new Swiper(".banner", {
     spaceBetween: 5,
     breakpoints: {
       431: {
-      slidesPerView: 4,
-      spaceBetween: 40, 
+      slidesPerView: 3,
+      spaceBetween: 30, 
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 40, 
       },
     },
   });
@@ -78,8 +90,12 @@ var swiper = new Swiper(".overall", {
   spaceBetween: 0,
   breakpoints: {
     431: {
-    slidesPerView: 3,
+    slidesPerView: 2,
     spaceBetween: 40, 
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40, 
     },
   },
 });
@@ -90,8 +106,12 @@ var swiper = new Swiper(".freshwater", {
   spaceBetween: 0,
   breakpoints: {
     431: {
-    slidesPerView: 3,
+    slidesPerView: 2,
     spaceBetween: 40, 
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40, 
     },
   },
 });
@@ -102,8 +122,12 @@ var swiper = new Swiper(".sea", {
   spaceBetween: 0,
   breakpoints: {
     431: {
-    slidesPerView: 3,
+    slidesPerView: 2,
     spaceBetween: 40, 
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40, 
     },
   },
 });
@@ -114,8 +138,12 @@ var swiper = new Swiper(".lure", {
   spaceBetween: 0,
   breakpoints: {
     431: {
-    slidesPerView: 3,
+    slidesPerView: 2,
     spaceBetween: 40, 
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40, 
     },
   },
 });
@@ -148,9 +176,17 @@ var swiper = new Swiper(".youtube", {
   spaceBetween: 5,
   breakpoints: {
     431: {
-    slidesPerView: 5,
-    spaceBetween: 25, 
-    },
+      slidesPerView: 3,
+      spaceBetween: 20, 
+      },
+      800: {
+        slidesPerView: 4,
+        spaceBetween: 20, 
+        },
+      1200: {
+        slidesPerView: 5,
+        spaceBetween: 25, 
+        },
   },
 });
 
@@ -160,9 +196,17 @@ var swiper = new Swiper(".free", {
   spaceBetween: 5,
   breakpoints: {
     431: {
-    slidesPerView: 5,
-    spaceBetween: 25, 
+    slidesPerView: 3,
+    spaceBetween: 20, 
     },
+    800: {
+      slidesPerView: 4,
+      spaceBetween: 20, 
+      },
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 25, 
+      },
   },
 });
 
@@ -175,10 +219,14 @@ var swiper = new Swiper(".store", {
     clickable: true,
   },
   breakpoints: {
-    431: {
-    slidesPerView: 3,
-    spaceBetween: 20, 
+    800: {
+    slidesPerView: 4,
+    spaceBetween: 10, 
     },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 20, 
+      },
   },
   loop: true,
   autoplay: {

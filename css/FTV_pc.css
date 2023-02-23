@@ -42,7 +42,7 @@ nav {
 }
 
 nav.inner {
-    width: 1300px;
+    width: 1200px;
     margin: 0 auto;
     align-items: center;
 }
@@ -276,10 +276,10 @@ nav .right .search {
 .text > .button01 {
     display: flex;
     gap: 10px;
-    position: relative;
+    position: absolute;
     z-index: 1;
     bottom: 30px;
-    right: 400px;
+    right: 20%;
 }
 
 .swiper-slide .button01 button {
