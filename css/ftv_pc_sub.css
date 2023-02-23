@@ -7,7 +7,7 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     word-break: keep-all;
     /* outline: 1px solid red; */
 }
@@ -78,3 +78,16 @@
     cursor: pointer;
 }
 
+.sec02 {
+    width: 1200px;
+}
+
+.sec02 .inner {
+    width: 100%;
+}
+
+.sec02 .inner .tabContant .tabBt {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
