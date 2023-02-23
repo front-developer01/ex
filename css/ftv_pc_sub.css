@@ -20,15 +20,18 @@
     --colorSkyBlue : #239BF4;
 }
 
+.sec01 {
+    width: 100;
+}
+
 .sec01 .inner {
     width: 100%;
-    height: 200px;
+    height: 180px;
     background-color: #e3e3e3;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-
 
 .inner .introduce {
     display: flex;
@@ -42,5 +45,36 @@
     border-radius: 50px;
     background: #239BF4;
     text-indent: -999px;
-    background: url(/ex/images/ftv/banner/banner_[Main]pc_1920_680_빅게임.jpg)no-repeat 50% 50% / cover;
+    background: url(/ex/images/ftv/바다/빅게임더와일드.jpg)no-repeat 50% 50% / cover;
 }
+
+.introduce .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introduce .text h3 {
+    font-size: 1.5625rem;
+    font-weight: 600;
+}
+
+.introduce .text span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sec01 .inner .contact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sec01 .inner .contact div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
