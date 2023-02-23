@@ -1,0 +1,652 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* Noto Sans KR 폰트 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+/* font-awesome url버전에 따라 폰트가 달리 나올 수 있음 */
+
+.sec01 .inner {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: 580px;
+}
+
+.banner .swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.banner .swiper-slide.slide1 {
+    background: url(/ex/images/ftv/banner/banner_[Main]pc_1920_680_빅게임.jpg) no-repeat 50% 50% / cover;
+}
+
+.banner .swiper-slide.slide2 {
+    background: url(/ex/images/ftv/banner/banner_[Main]pc_1920_680_이글아이2.jpg) no-repeat 50% 50% / cover;
+}
+
+.banner .swiper-slide.slide3 {
+    background: url(/ex/images/ftv/banner/banner_[Main]pc_1920_680_보트앤조이.jpg) no-repeat 50% 50% / cover;
+}
+
+.banner .swiper-slide.slide4 {
+    background: url(/ex/images/ftv/banner/banner_[Main]pc_1920_680_주간전망대.jpg) no-repeat 50% 50% / cover;
+}
+
+.swriper-pagenation {
+    padding: 0;
+}
+
+.banner .swiper-slide .text {
+    width: 100%;
+    height: 120px;
+    color: rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 2px var(--colorGerylight);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.322917) 0%, rgba(255, 255, 255, 0.322917) 0.01%, rgba(255, 255, 255, 0.324271) 0.02%, rgba(255, 255, 255, 0.03) 0.03%, rgba(255, 255, 255, 0.83) 51.04%, #FFFFFF 99.48%);
+    padding: 20px 0 0 0;
+    gap: 20px;
+    position: relative;
+}
+
+.text > .button01 {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    right: 20%;
+}
+
+.swiper-slide .button01 button {
+    width: 100px;
+    height: 30px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: var(--colorWhite);
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+.swiper-slide .button01 button:nth-of-type(1):hover {
+    color: var(--colorBlack);
+    background: var(--colorGerylight);
+}
+
+.swiper-slide .button01 button:nth-of-type(2):hover {
+    color: var(--colorBlack);
+    background: var(--colorGerylight);
+}
+
+.banner .swiper-slide .text h3 {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.banner .swiper-slide .text span {
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.banner .swiper-slide .text span:nth-of-type(2) {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.article02 .inner {
+    width: 1200px;
+    height: 270px;
+    margin: 0 auto;
+}
+
+.article02 h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin:  20px 0 10px 0;
+}
+
+.timeline {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.timeline .swiper-wrapper .swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--colorGerylight);
+}
+
+.timeline .swiper-wrapper .swiper-slide h3 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    padding: 0 0 19px 0;
+    border-bottom: 4px solid #d9d9d9;
+}
+
+.timeline .swiper-wrapper .swiper-slide h3:hover {
+    border-bottom: 4px solid #2f4693;
+}
+
+.timeline .swiper-wrapper .swiper-slide span {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    padding: 19px 0 0 0;
+}
+
+.timeline .swiper-wrapper .swiper-slide p {
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+.article03 .inner{
+    width: 1200px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+.article03 img {
+    width: 270px;
+    height: 200px;
+    padding: 0;
+}
+
+.new {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto ;
+}
+
+.tabButton01 button {
+    width: 120px;
+    height: 35px;
+    color: var(--colorGerylight);
+    background:var(--colorWhite);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border: 1px solid var(--colorGerylight);
+    /* border-radius: 5px; */
+    margin: 20px 10px 30px 0;
+    cursor: pointer;
+}
+
+.tabButton01 button.on {
+    background: #2f4693;
+    color: var(--colorWhite);
+    border: 1px solid transparent;
+}
+
+.tabContent01 .new .swiper-wrapper {
+    display: block;
+    display: flex;
+}
+
+.tabContent01 .new .swiper-wrapper div {
+    width: 270px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.tabContent01 .best .swiper-wrapper {
+    display: block;
+    display: flex;
+}
+
+.best .swiper-wrapper div {
+    width: 270px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.tabContent01 .swiper {
+    display: none;
+}
+
+.tabContent01 .swiper.on {
+    display: flex;
+}
+
+.tabContent01 .swiper-slide:hover {
+    transform: translate(0, -5px);
+    transition: all 0.3s;
+}
+
+.article04 .inner {
+    width: 1200px;
+    height: 142px;
+    margin: 0 auto;
+}
+
+.sec02 {
+    width: 1200px;
+    margin: 0 auto;
+    /* background-image: linear-gradient( 165deg,  rgb(25, 153, 170) 1%, #bbb 91.1% ); */
+}
+
+.sec02 .inner {
+    width: 100%;
+    height: 350px;
+    margin: 50px 0 10px 0;
+}
+
+.overall .swiper-wrapper .swiper-slide:nth-of-type(1) {
+    background: url(/ex/images/ftv/종합/보트앤조이.jpg) no-repeat 50% 50% / cover;
+}
+
+.overall .swiper-wrapper .swiper-slide:nth-of-type(2) {
+    background: url(/ex/images/ftv/종합/낚시인피플.jpg) no-repeat 50% 50% / cover;
+}
+
+.overall .swiper-wrapper .swiper-slide:nth-of-type(3) {
+    background: url(/ex/images/ftv/종합/신국진의주간전망대.jpg) no-repeat 50% 50% / cover;
+}
+
+.overall .swiper-wrapper .swiper-slide:nth-of-type(4) {
+    background: url(/ex/images/ftv/종합/뻐니피싱.png) no-repeat 50% 50% / cover;
+}
+
+.overall .swiper-wrapper .swiper-slide:nth-of-type(5) {
+    background: url(/ex/images/ftv/종합/이테르피스칸투르.jpg) no-repeat 50% 50% / cover;
+}
+
+.overall .swiper-wrapper .swiper-slide:nth-of-type(6) {
+    background: url(/ex/images/ftv/종합/더필드스태프.png) no-repeat 50% 50% / cover;
+}
+
+.freshwater .swiper-wrapper .swiper-slide:nth-of-type(1) {
+    background: url(/ex/images/ftv/민물/마이그라운드.jpg) no-repeat 50% 50% / cover;
+}
+
+.freshwater .swiper-wrapper .swiper-slide:nth-of-type(2) {
+    background: url(/ex/images/ftv/민물/붕어에미치다.jpg) no-repeat 50% 50% / cover;
+}
+
+.freshwater .swiper-wrapper .swiper-slide:nth-of-type(3) {
+    background: url(/ex/images/ftv/민물/소야_밤을지새우다.jpg) no-repeat 50% 50% / cover;
+}
+
+.freshwater .swiper-wrapper .swiper-slide:nth-of-type(4) {
+    background: url(/ex/images/ftv/민물/월척특급.jpg) no-repeat 50% 50% / cover;
+}
+
+.freshwater .swiper-wrapper .swiper-slide:nth-of-type(5) {
+    background: url(/ex/images/ftv/민물/피싱오브컴벳.png) no-repeat 50% 50% / cover;
+}
+
+.freshwater .swiper-wrapper .swiper-slide:nth-of-type(6) {
+    background: url(/ex/images/ftv/민물/대물여정외길.jpg) no-repeat 50% 50% / cover;
+}
+
+.sea .swiper-wrapper .swiper-slide:nth-of-type(1) {
+    background: url(/ex/images/ftv/바다/승부사의히든카드.jpg) no-repeat 50% 50% / cover;
+}
+
+.sea .swiper-wrapper .swiper-slide:nth-of-type(2) {
+    background: url(/ex/images/ftv/바다/그릿.jpg) no-repeat 50% 50% / cover;
+}
+
+.sea .swiper-wrapper .swiper-slide:nth-of-type(3) {
+    background: url(/ex/images/ftv/바다/지깅톡.jpg) no-repeat 50% 50% / cover;
+}
+
+.sea .swiper-wrapper .swiper-slide:nth-of-type(4) {
+    background: url(/ex/images/ftv/바다/빌드업.jpg) no-repeat 50% 50% / cover;
+}
+
+.sea .swiper-wrapper .swiper-slide:nth-of-type(5) {
+    background: url(/ex/images/ftv/바다/북서풍의공격낚시.png) no-repeat 50% 50% / cover;
+}
+
+.sea .swiper-wrapper .swiper-slide:nth-of-type(6) {
+    background: url(/ex/images/ftv/바다/미스터리원투.jpg) no-repeat 50% 50% / cover;
+}
+
+.lure .swiper-wrapper .swiper-slide:nth-of-type(1) {
+    background: url(/ex/images/ftv/루어/LFA토너먼트챔피언십.jpg) no-repeat 50% 50% / cover;
+}
+
+.lure .swiper-wrapper .swiper-slide:nth-of-type(2) {
+    background: url(/ex/images/ftv/루어/해신.jpg) no-repeat 50% 50% / cover;
+}
+
+.lure .swiper-wrapper .swiper-slide:nth-of-type(3) {
+    background: url(/ex/images/ftv/루어/이글아이2.jpg) no-repeat 50% 50% / cover;
+}
+
+.lure .swiper-wrapper .swiper-slide:nth-of-type(4) {
+    background: url(/ex/images/ftv/루어/2022LFA엘리트리그.png) no-repeat 50% 50% / cover;
+}
+
+.lure .swiper-wrapper .swiper-slide:nth-of-type(5) {
+    background: url(/ex/images/ftv/루어/스타일J.jpg) no-repeat 50% 50% / cover;
+}
+
+.lure .swiper-wrapper .swiper-slide:nth-of-type(6) {
+    background: url(/ex/images/ftv/루어/루어테크니션.jpg) no-repeat 50% 50% / cover;
+}
+
+.sec02 .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sec02 .inner .tabButton02 {
+
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.tabButton02 button {
+    width: 300px;
+    height: 40px;
+    color: var(--colorGerylight);
+    background:none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    /* border-radius: 10px; */
+    /* margin: 0 10px 10px 0; */
+    cursor: pointer;
+}
+
+.tabButton02 button.on {
+    background: #2f4693;;
+    color: var(--colorWhite);
+    /* border: 1px solid transparent; */
+}
+
+.sec02 .tabContent02 .overall .swiper-wrapper {
+    display: block;
+    display: flex;
+}
+
+.tabContent02 .swiper-wrapper .swiper-slide .text {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    color: var(--colorWhite);
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0 10px;
+}
+
+.tabContent02 .swiper-wrapper div {
+    width: 400px;
+    height: 250px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.tabContent02 .swiper-wrapper div h2{
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.tabContent02 .swiper {
+    display: none;
+}
+
+.tabContent02 .swiper.on {
+    display: flex;
+}
+
+.tabContent02 .swiper-slide:hover {
+    transform: translate(0, -5px);
+    transition: all 0.3s;
+}
+
+.sec03 .inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.sec03 .inner h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.sec03 .inner .article05 .swiper-wrapper .swiper-slide {
+    display: block;
+    display: flex;
+}
+
+.article05 .swiper-wrapper div {
+    width: 220px;
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.article05 .swiper-wrapper div img {
+    width: 220px;
+    height: 140px;
+    padding: 0;
+}
+
+.article05 .swiper-wrapper .swiper-slide span:nth-of-type(1) {
+    width: 220px;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.article05 .swiper-wrapper .swiper-slide span:nth-of-type(2) {
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.sec03 .inner .article06 .free .swiper-wrapper .swiper-slide {
+    display: block;
+    display: flex;
+}
+
+.article06 .swiper-wrapper div {
+    width: 220px;
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.article06 .swiper-wrapper div img {
+    width: 220px;
+    height: 140px;
+    padding: 0;
+}
+
+.article06 .swiper-wrapper .swiper-slide span:nth-of-type(1) {
+    width: 220px;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.article06 .swiper-wrapper .swiper-slide span:nth-of-type(2) {
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.sec03 .article05 .swiper-slide:hover,
+.sec03 .article06 .swiper-slide:hover {
+    transform: translate(0, -5px);
+    transition: all 0.3s;
+}
+
+.sec03 .inner .article07 .left .map {
+        width: 450px;
+        height: 510px;
+        background-color: #719ED2;
+        background-image: url(/ex/images/ftv/지도/지도70\ [Converted]-01.png);
+        background-position: 50% 50%;
+        background-size: contain;
+        text-indent: -900px;
+        border: 1px solid #000;
+        border-radius: 10px;
+}
+
+.sec03 .inner .article07 {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    margin: 0 0 40px 0;
+}
+
+.sec03 .inner .article07 .right {
+    width: 670px;
+    height: 570px;
+}
+
+.article07 .right .smartStore .showping h3 {
+    width: 100%;
+    height: 60px;
+    font-size: 1.875rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorWhite);
+    background: #415Cbb;
+}
+
+.showping .store {
+    width: 100%;
+    height: 270px;    
+}
+
+.showping .store .swiper-wrapper {
+    width: 100%;
+    height: 230px;
+}
+
+.showping .store .swiper-wrapper div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--colorGerylight);
+    gap: 5px;
+    margin: 0 0 30px 0;
+}
+
+.showping .store .swiper-wrapper div img {
+    width: 100%;
+    height: 160px;
+    padding: 0;
+    margin: 0;
+}
+
+.showping .store .swiper-wrapper div span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.showping .store .swiper-wrapper div span:nth-of-type(2) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.partnership .agency {
+    width: 100%;
+    height: 115px;
+}
+
+.article07 .right .agency .swiper-wrapper .swiper-slide {
+    display: flex;
+}
+
+.article07 .right .agency .swiper-wrapper div {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: rgba(0, 0, 0, 0.1); */
+}
+
+.article07 .right .agency .swiper-wrapper div a {
+    width: 320px;
+    height: 80px;
+    overflow: hidden;
+    text-indent: -9000px;
+}
+
+.article07 .right .agency .swiper-wrapper .swiper-slide.slide1 a {
+    background:url(/ex/images/ftv/협력기관/해양경찰청.png)no-repeat 50% 50% / cover;
+}
+
+.article07 .right .agency .swiper-wrapper .swiper-slide.slide2 a {
+    background:url(/ex/images/ftv/협력기관/해양수산부.png)no-repeat 50% 50% / cover;
+}
+
+.article07 .right .agency .swiper-wrapper .swiper-slide.slide3 a {
+    background:url(/ex/images/ftv/협력기관/국립해양조사원.png)no-repeat 50% 50% / cover;
+}
+
+.article07 .right .agency .swiper-wrapper .swiper-slide.slide4 a {
+    background:url(/ex/images/ftv/협력기관/한국수산자원공단.png)no-repeat 50% 50% / cover;
+}
+
+.article07 .right .agency .swiper-wrapper .swiper-slide.slide5 a {
+    background:url(/ex/images/ftv/협력기관/한국어촌어항공단.png)no-repeat 50% 50% / cover;
+}
+
+.article07 .right .agency .swiper-wrapper .swiper-slide.slide6 a {
+    background:url(/ex/images/ftv/협력기관/한국낚시협회.png)no-repeat 50% 50% / cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
