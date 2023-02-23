@@ -36,7 +36,7 @@ header .inner .left ul.gnb01 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 90%;
+    width: 80%;
     height: 100vh;
     z-index: 200;
     display: flex;
@@ -46,12 +46,11 @@ header .inner .left ul.gnb01 {
     background: rgba(255, 255, 255, 0.83);
     transform: translateX(-100%);
     transition: transform 0.5s;
-    padding: 100px 0 0 0;
+    padding: 80px 0 0 0;
 }
 
 nav .left > .gnb01 > li > ul.snb::before {
     display: none;
-    border-bottom: 2px solid #239BF4;
 }
 
 nav .left > .gnb01 > li:hover > ul.snb::before {
@@ -80,43 +79,7 @@ ul.gnb01 li.Bt .close {
     top: 30px;
     right: 30px;
     display: block;
-    color: #000;
-}
-
-/* ul.gnb > li:hover 속성을 해제 */
-
-/* ul.gnb01 > li > ul {
-    list-style: none;
-    width: 60%;
-    height: auto;
-    padding: 20px 0;
-    border-top: 1px solid #e6e6e6;
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: unset;
-    transition: unset;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-} */
-
-/* ul.gnb01 > li > ul > li {
-    min-height: 30px;
-}
-ul.gnb01 > li > ul > li > a {
-    font-size: 1.2rem;
-    height: 30px;
-    line-height: 30px;
-} */
-/* .top:hover 속성을 해제하고, 스크롤 위치에 따라 .top에 .on을 추가하는 방식으로 진행 */
-header .left.on {
-    background: #fff;
-    color: #666;
-    border-bottom: 1px solid #e6e6e6;
+    color: #0078FF;
 }
 
 /* -------------------------------------- */
@@ -139,12 +102,6 @@ header .inner .right {
     display: none;
 }
 
-
-/* nav.inner .left .gnb01,
-nav.inner .right {
-    display: none;
-} */
-
 .banner .swiper-wrapper .button01 {
     display: none;
 }
@@ -155,8 +112,6 @@ nav.inner .right {
     color: rgba(0, 0, 0, 0.7);
     text-shadow: 1px 1px 2px var(--colorGerylight);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.322917) 0%, rgba(255, 255, 255, 0.322917) 0.01%, rgba(255, 255, 255, 0.324271) 0.02%, rgba(255, 255, 255, 0.03) 0.03%, rgba(255, 255, 255, 0.83) 51.04%, #FFFFFF 99.48%);
-    /* padding: 20px 0 0 0;
-    gap: 20px; */
     position: relative;
 }
 
@@ -341,7 +296,7 @@ nav.inner .right {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* order: -1; */
+    order: 2;
 }
 
 .sec03 .inner .article07 .left .map {
@@ -371,10 +326,11 @@ nav.inner .right {
 
 .sec03 .article07 .right .smartStore .showping h3 {
     width: 100%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 500;
     margin: 0 0 15px 0;
 }
@@ -382,10 +338,12 @@ nav.inner .right {
 .showping .store {
     width: 100%;
     height: 230px;
+    order: 1;
 }
 
 .partnership .agency {
     height: 90px;
+    order: 3;
 }
 
 .sec03 .article07 .right .smartStore .swiper-wrapper div {

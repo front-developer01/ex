@@ -187,7 +187,6 @@ var swiper = new Swiper(".store", {
   },
 });
 
-// direction: "vertical",
 //협력기관
 var swiper = new Swiper(".agency", {
   slidesPerView: 1,
@@ -209,6 +208,7 @@ var swiper = new Swiper(".agency", {
   },
 });
 
+//모바일 나브 
 window.onload = () => {}
   const gnb = document.querySelector("ul.gnb01");
   function addOn() {
@@ -225,12 +225,5 @@ window.onload = () => {}
   mMenuBt.addEventListener('click', addOn);
   closeBt.addEventListener('click', removeOn);
 
-//   $(document).ready(function() {
-//     $(".gnb01 > li > a").click(function() {
-//         $(this).next().addBack().toggleClass("on").end()
-//         .not(this).removeClass("on").end()
-//         .parent().siblings().not(this).removeClass("on");
-//         return false;
-//     });
-// });
+
 
