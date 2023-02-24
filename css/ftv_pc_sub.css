@@ -88,15 +88,15 @@
     width: 100%;
 }
 
-.sec02 .inner .tabContant {
+.sec02 .inner .tabContent {
     width: 100%;
 }
 
-.sec02 .inner .tabContant .tabBt{
+.sec02 .inner .tabContent .tabBt{
     margin: 20px 0;
 }
 
-.tabContant .tabBt button {
+.tabContent .tabBt button {
     /* width: 150px; */
     height: 50px;
     font-size: 1.25rem;
@@ -107,25 +107,30 @@
     margin: 0 20px 0 0;
 }
 
-.tabContant .tabBt button:hover {
+.tabContent .tabBt button:hover {
     border-bottom: 3px solid #239BF4;
 }
 
-.tabContant .article01 {
+.tabBt button.on {
+    border-bottom: 3px solid #239BF4;
+}
+
+.tabContent .t01 {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.tabContant .article01 .program01 {
+.tabContent .t01 .program01 {
     width: 100%;
     padding: 10px 10px;
+    margin: 0 0 20px 0;
     display: flex;
     flex-direction: row;
     gap: 10%;
 }
 
-.tabContant .program01 .banner {
+.tabContent .t01 .banner {
     width: 600px;
     height: 400px;
     background: url(/ex/images/ftv/바다/빅게임더와일드.jpg)no-repeat 50% 50% / cover;
@@ -133,7 +138,7 @@
     overflow: hidden;
 }
 
-.tabContant .program01 .info {
+.tabContent .program01 .info {
     width: 40%;
     height: 400px;
 }
@@ -188,38 +193,38 @@
     display: none;
 }
 
-.article01 .program02 {
+.tabContent .program02 {
     width: 100%;
     margin: 0 0 40px 0;
 }
 
-.article01 .program02 h2 {
+.tabContent .program02 h2 {
     font-size: 1.5rem;
     font-weight: 600;
     padding: 0 0 20px 0;
 }
 
-.article01 .program02 .push {
+.tabContent .program02 .push {
     margin: 0 auto;
     padding: 0 60px;
 }
 
-.program02 .swiper-wrapper .swiper-slide img {
+.tabContent .program02 .swiper-wrapper .swiper-slide img {
     width: 100%;
     height: 100%;
 }
 
-.program02 .swiper-wrapper .swiper-slide h3 {
+.tabContent .program02 .swiper-wrapper .swiper-slide h3 {
     font-size: 1.15rem;
     font-weight: 600;
 }
 
-.program02 .swiper-wrapper .swiper-slide span {
+.tabContent .program02 .swiper-wrapper .swiper-slide span {
     font-size: 1rem;
     font-weight: 400;
 }
 
-.program02 .swiper-wrapper .swiper-slide p {
+.tabContent .program02 .swiper-wrapper .swiper-slide p {
     font-size: 0.8125rem;
     width: 40px;
     padding: 0 5px;
@@ -229,17 +234,83 @@
     border-radius: 20px;
 }
 
+.tabContent .tab {
+    display: none;
+}
 
+.tabContent .tab.on {
+    display: block;
+}
 
+.tabContent .t02 {
+    width: 100%;
+}
 
+.tabContent .t02 .broadCast {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 40px;
+    background: rgba(0, 0, 0, 0.4);
+}
 
+.tabContent .t02 .broadCast img{
+    width: 70%;
+    height: 90%;
+}
 
+.broadCast .summary {
+    width: 30%;
+    color: var(--colorWhite);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
 
+.broadCast .summary h3{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
 
+.broadCast .summary span{
+    width: 280px;
+    font-size: 1rem;
+}
 
+.broadCast .navBt {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 
+.broadCast .navBt button {
+    font-size: 1.25rem;
+    font-weight: 300;
+    background: none;
+    color: var(--colorWhite);
+    border:1px solid var(--colorWhite) ;
+    padding: 5px 5px;
+    cursor: pointer;
+}
 
+.t02 div.warning {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5e5e5;
+    margin: 0 0 20px 0;
+}
 
+.t02 div.warning h2{
+    font-size: 1.125rem;
+    font-weight: 500;
+}
 
 
 
