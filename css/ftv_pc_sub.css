@@ -7,7 +7,7 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0 auto;
+    margin: 0;
     word-break: keep-all;
     /* outline: 1px solid red; */
 }
@@ -27,7 +27,7 @@
 }
 
 .sec01 .inner {
-    width: 90%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -81,23 +81,181 @@
 
 .sec02 {
     width: 1200px;
+    margin: 0 auto;
 }
 
 .sec02 .inner {
     width: 100%;
 }
 
-.sec02 .inner .tabContant .tabBt {
-    width: 500px;
-    display: flex;
+.sec02 .inner .tabContant {
+    width: 100%;
+}
+
+.sec02 .inner .tabContant .tabBt{
     margin: 20px 0;
 }
 
 .tabContant .tabBt button {
-    width: 150px;
-    height: 40px;
+    /* width: 150px; */
+    height: 50px;
     font-size: 1.25rem;
     font-weight: 600;
     border: none;
     background: none;
+    border-bottom: 3px solid transparent;
+    margin: 0 20px 0 0;
 }
+
+.tabContant .tabBt button:hover {
+    border-bottom: 3px solid #239BF4;
+}
+
+.tabContant .article01 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.tabContant .article01 .program01 {
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.tabContant .program01 .banner {
+    width: 600px;
+    height: 400px;
+    background: url(/ex/images/ftv/바다/빅게임더와일드.jpg)no-repeat 50% 50% / cover;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+.tabContant .program01 .info {
+    width: 40%;
+    height: 400px;
+}
+
+.info .plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 0 20px 0;
+}
+
+.info .plan h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.info .plan p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.info .staff h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.info .staff div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 0 5px 0;
+    border-bottom: 1px solid var(--colorGerylight);
+}
+
+.info .staff div h3 {
+    width: 50%;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.info .staff div span {
+    width: 50%;
+    font-size: 1rem;
+}
+
+.info .staff div:nth-of-type(3) span {
+    display: none;
+}
+
+.article01 .program02 {
+    width: 100%;
+    margin: 0 0 40px 0;
+}
+
+.article01 .program02 h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0 0 20px 0;
+}
+
+.article01 .program02 .push {
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.program02 .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.program02 .swiper-wrapper .swiper-slide h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.program02 .swiper-wrapper .swiper-slide span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.program02 .swiper-wrapper .swiper-slide p {
+    font-size: 0.8125rem;
+    width: 40px;
+    padding: 0 5px;
+    margin: 5px 0 0 0;
+    color: red;
+    border: 2px solid red;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
