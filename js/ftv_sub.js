@@ -2,9 +2,9 @@ var swiper = new Swiper(".push", {
     slidesPerView: 2,
     spaceBetween: 5,
     breakpoints: {
-      431: {
-      slidesPerView: 3,
-      spaceBetween: 30, 
+      600: {
+      slidesPerView: 2,
+      spaceBetween: 60, 
       },
       1200: {
         slidesPerView: 3,
@@ -33,3 +33,4 @@ var swiper = new Swiper(".push", {
     });
   });
   tabBt[0].click(); // 첫번째 탭 켜기
+  
