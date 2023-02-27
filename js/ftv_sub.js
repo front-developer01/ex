@@ -1,22 +1,32 @@
 var swiper = new Swiper(".push", {
-    slidesPerView: 2,
-    spaceBetween: 5,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    touchRatio:0,
     breakpoints: {
       600: {
       slidesPerView: 2,
-      spaceBetween: 60, 
+      spaceBetween: 60,
+      touchRatio:1,
       },
       1200: {
         slidesPerView: 3,
-        spaceBetween: 60, 
+        spaceBetween: 60,
+        touchRatio:1, 
       },
     },
-    loop: true,
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false
-    },
   });
+
+//   window.addEventListener('resize', () => {
+//     let wiw = window.innerWidth;
+
+//     if (wiw < 600) {
+//         swiper.off();
+//     } else {
+//         swiper.on();
+//     }
+// });
+
+  // swiper.destroy(deleteInstance, cleanStyles)
 
   let tabBt = document.querySelectorAll('.tabBt > button'); // 탭버튼
   Array.from(tabBt).forEach((eachButton, index) => {
@@ -33,4 +43,3 @@ var swiper = new Swiper(".push", {
     });
   });
   tabBt[0].click(); // 첫번째 탭 켜기
-  

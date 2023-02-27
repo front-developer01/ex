@@ -27,11 +27,12 @@
 }
 
 .sec01 .inner {
-    width: 100%;
+    width: 1200px;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
 }
 
 .inner .introduce {
@@ -123,6 +124,7 @@
 
 .tabContent .t01 .program01 {
     width: 100%;
+    height: 100%;
     padding: 10px 10px;
     margin: 0 0 20px 0;
     display: flex;
@@ -131,11 +133,10 @@
 }
 
 .tabContent .t01 .banner {
-    width: 600px;
+    width: 100%;
     height: 400px;
     background: url(/ex/images/ftv/바다/빅게임더와일드.jpg)no-repeat 50% 50% / cover;
     text-indent: -999px;
-    overflow: hidden;
 }
 
 .tabContent .program01 .info {
