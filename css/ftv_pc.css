@@ -206,6 +206,13 @@
     margin: 0 auto;
 }
 
+.tabButton01 {
+    width: 100%;
+    background-color: rgba;
+
+    position: relative;
+}
+
 .tabButton01 button {
     width: 120px;
     height: 35px;
@@ -223,6 +230,42 @@
     background: #2f4693;
     color: var(--colorWhite);
     border: 1px solid transparent;
+}
+
+.article03 .control03 div {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 49%;
+    right: 0;
+}
+
+.article03 .control03 div:nth-of-type(2) {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 49%;
+    left: 1120px;
+}
+
+.article03 .control03 .swiper-button-next::after {
+    color:#000;
+    font-size: 1.25rem;
+    font-weight: 800;
+    position: absolute;
+    top: 7.5px;
+    right: 10px;
+}
+
+.article03 .control03 .swiper-button-prev::after {
+    color:#000;
+    font-size: 1.25rem;
+    font-weight: 800;
+    position: absolute;
+    top: 7.5px;
+    left: 10px;
 }
 
 .tabContent01 .new .swiper-wrapper {

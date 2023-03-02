@@ -1,5 +1,5 @@
 // full banner
-var swiper = new Swiper(".banner", {
+new Swiper(".banner", {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -15,7 +15,7 @@ var swiper = new Swiper(".banner", {
   });
 
 // timeline
-  var swiper = new Swiper(".timeline", {
+new Swiper(".timeline", {
     slidesPerView: 3,
     spaceBetween: 0,
     breakpoints: {
@@ -39,8 +39,11 @@ var swiper = new Swiper(".banner", {
     },
   });
 
+  // swiper02.controller.control = timeline;
+  
+
 // 최신 프로그램
-  var swiper = new Swiper(".new", {
+var swiper03 = new Swiper(".new", {
     slidesPerView: 2,
     spaceBetween: 5,
     breakpoints: {
@@ -50,13 +53,19 @@ var swiper = new Swiper(".banner", {
       },
       1200: {
         slidesPerView: 4,
-        spaceBetween: 40, 
+        spaceBetween: 40,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }, 
       },
+      loop : true,
     },
   });
 
+
 // 주간 best 방송
-  var swiper = new Swiper(".best", {
+var swiper04 =  new Swiper(".best", {
     slidesPerView: 2,
     spaceBetween: 5,
     breakpoints: {
@@ -66,7 +75,11 @@ var swiper = new Swiper(".banner", {
       },
       1200: {
         slidesPerView: 4,
-        spaceBetween: 40, 
+        spaceBetween: 40,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }, 
       },
     },
   });
@@ -89,7 +102,7 @@ Array.from(tabButton01).forEach((eachButton, index) => {
 tabButton01[0].click(); // 첫번째 탭 켜기
 
 //  종합
-var swiper = new Swiper(".overall", {
+new Swiper(".overall", {
   slidesPerView: 1,
   spaceBetween: 0,
   breakpoints: {
@@ -105,7 +118,7 @@ var swiper = new Swiper(".overall", {
 });
 
 //  민물
-var swiper = new Swiper(".freshwater", {
+new Swiper(".freshwater", {
   slidesPerView: 1,
   spaceBetween: 0,
   breakpoints: {
@@ -121,7 +134,7 @@ var swiper = new Swiper(".freshwater", {
 });
 
 //  바다
-var swiper = new Swiper(".sea", {
+new Swiper(".sea", {
   slidesPerView: 1,
   spaceBetween: 0,
   breakpoints: {
@@ -137,7 +150,7 @@ var swiper = new Swiper(".sea", {
 });
 
 //  루어
-var swiper = new Swiper(".lure", {
+new Swiper(".lure", {
   slidesPerView: 1,
   spaceBetween: 0,
   breakpoints: {
@@ -175,7 +188,7 @@ Array.from(tabButton02).forEach((eachButton, index) => {
 tabButton02[0].click(); // 첫번째 탭 켜기
 
 // 최신동영상
-var swiper = new Swiper(".youtube", {
+new Swiper(".youtube", {
   slidesPerView: 2,
   spaceBetween: 5,
   breakpoints: {
@@ -195,7 +208,7 @@ var swiper = new Swiper(".youtube", {
 });
 
 // 무료동영상
-var swiper = new Swiper(".free", {
+new Swiper(".free", {
   slidesPerView: 2,
   spaceBetween: 5,
   breakpoints: {
@@ -215,7 +228,7 @@ var swiper = new Swiper(".free", {
 });
 
 //스마트스토어
-var swiper = new Swiper(".store", { 
+new Swiper(".store", { 
   slidesPerView: 2,
   spaceBetween: 5,
   pagination: {
@@ -240,7 +253,7 @@ var swiper = new Swiper(".store", {
 });
 
 //협력기관
-var swiper = new Swiper(".agency", {
+new Swiper(".agency", {
   slidesPerView: 1,
   spaceBetween: 0, 
   breakpoints: {
