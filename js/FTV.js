@@ -25,7 +25,11 @@ var swiper = new Swiper(".banner", {
     },
       1200: {
       slidesPerView: 5,
-      spaceBetween: 0, 
+      spaceBetween: 0,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }, 
     },
     loop: true,
     autoplay: {
