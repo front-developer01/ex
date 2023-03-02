@@ -176,6 +176,10 @@
     border-bottom: 4px solid #2f4693;
 }
 
+.timeline .swiper-wrapper .swiper-slide h3:active {
+    border-bottom: 4px solid #2f4693;
+}
+
 .timeline .swiper-wrapper .swiper-slide span {
     font-size: 0.9375rem;
     font-weight: 700;
@@ -185,6 +189,11 @@
 .timeline .swiper-wrapper .swiper-slide p {
     font-size: 0.8125rem;
     font-weight: 500;
+}
+
+.article03 {
+    width: 100%;
+    position: relative;
 }
 
 .article03 .inner {
@@ -208,8 +217,6 @@
 
 .tabButton01 {
     width: 100%;
-    background-color: rgba;
-
     position: relative;
 }
 
@@ -510,6 +517,47 @@
     margin: 0 0 20px 0;
 }
 
+.sec03 .article05 {
+    width: 100%;
+    position: relative;
+}
+
+.article05 .control04 div {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 22px;
+    right: 0;
+}
+
+.article05 .control04 div:nth-of-type(2) {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 22px;
+    left: 1120px;
+}
+
+.article05 .control04 .swiper-button-next::after {
+    color:#000;
+    font-size: 1.25rem;
+    font-weight: 800;
+    position: absolute;
+    top: 7.5px;
+    right: 10px;
+}
+
+.article05 .control04 .swiper-button-prev::after {
+    color:#000;
+    font-size: 1.25rem;
+    font-weight: 800;
+    position: absolute;
+    top: 7.5px;
+    left: 10px;
+}
+
 .sec03 .inner .article05 .swiper-wrapper .swiper-slide {
     display: block;
     display: flex;
@@ -546,6 +594,47 @@
 .sec03 .inner .article06 .free .swiper-wrapper .swiper-slide {
     display: block;
     display: flex;
+}
+
+.sec03 .article06 {
+    width: 100%;
+    position: relative;
+}
+
+.article06 .control05 div {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 22px;
+    right: 0;
+}
+
+.article06 .control05 div:nth-of-type(2) {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 22px;
+    left: 1120px;
+}
+
+.article06 .control05 .swiper-button-next::after {
+    color:#000;
+    font-size: 1.25rem;
+    font-weight: 800;
+    position: absolute;
+    top: 7.5px;
+    right: 10px;
+}
+
+.article06 .control05 .swiper-button-prev::after {
+    color:#000;
+    font-size: 1.25rem;
+    font-weight: 800;
+    position: absolute;
+    top: 7.5px;
+    left: 10px;
 }
 
 .article06 .swiper-wrapper div {
