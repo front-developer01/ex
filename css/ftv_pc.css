@@ -120,7 +120,7 @@
 
 .article02 .inner {
     width: 1200px;
-    height: 270px;
+    height: 240px;
     margin: 0 auto;
     position: relative;
 }
@@ -132,28 +132,43 @@
 }
 
 .timeline {
-    width: 80%;
-    height: 100%;
+    width: 90%;
+    height: 160px;
     overflow: hidden;
     margin: 0 auto;
 }
 
+.timeline .control02 div {
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+}
+
+.article03 .control03 div:nth-of-type(2) {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 49%;
+    left: 1120px;
+}
+
 .timeline .control02 .swiper-button-next::after {
-    color:rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 1.25rem;
     font-weight: 800;
     position: absolute;
-    top: -30px;
-    right: 50px;
+    top: 7.5px;
+    right: 10px;
 }
 
 .timeline .control02 .swiper-button-prev::after {
-    color:rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 1.25rem;
     font-weight: 800;
     position: absolute;
-    top: -30px;
-    left: 50px;
+    top: 7.5px;
+    left: 10px;
 }
 
 .timeline .swiper-wrapper .swiper-slide {
@@ -217,7 +232,12 @@
 
 .tabButton01 {
     width: 100%;
-    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0 0 0;
+    /* margin: 0 0 10px 0; */
 }
 
 .tabButton01 button {
@@ -229,7 +249,6 @@
     font-weight: 500;
     border: 1px solid var(--colorGerylight);
     /* border-radius: 5px; */
-    margin: 20px 10px 30px 0;
     cursor: pointer;
 }
 
@@ -239,22 +258,26 @@
     border: 1px solid transparent;
 }
 
+.article03 .control03 {
+    width: 100%;
+    height: 40px;
+}
+
 .article03 .control03 div {
     width: 35px;
     height: 35px;
     border: 1px solid #000;
-    position: absolute;
-    top: 49%;
-    right: 0;
+    position: relative;
+    top: -20px;
+    left: 1165px;
 }
 
 .article03 .control03 div:nth-of-type(2) {
     width: 35px;
     height: 35px;
     border: 1px solid #000;
-    position: absolute;
-    top: 49%;
-    left: 1120px;
+    position: relative;
+    top: -33px;
 }
 
 .article03 .control03 .swiper-button-next::after {
@@ -264,6 +287,7 @@
     position: absolute;
     top: 7.5px;
     right: 10px;
+    margin: 0;
 }
 
 .article03 .control03 .swiper-button-prev::after {
@@ -273,12 +297,13 @@
     position: absolute;
     top: 7.5px;
     left: 10px;
+    margin: 0;
 }
 
-.tabContent01 .new .swiper-wrapper {
+/* .tabContent01 .new .swiper-wrapper {
     display: block;
     display: flex;
-}
+} */
 
 .tabContent01 .new .swiper-wrapper div {
     width: 270px;
@@ -289,10 +314,10 @@
     gap: 5px;
 }
 
-.tabContent01 .best .swiper-wrapper {
+/* .tabContent01 .best .swiper-wrapper {
     display: block;
     display: flex;
-}
+} */
 
 .best .swiper-wrapper div {
     width: 270px;

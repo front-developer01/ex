@@ -37,41 +37,81 @@ var swiper = new Swiper(".timeline", {
   },
 });
 
-window.onLoad = () =>{
+// window.onload = () => {
 
-  setInterval(()=>{
-      const date = new Date()
-      const hours =  date.getHours() < 10 ? '0'+date.getHours() : date.getHours() 
-      const minute = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
-      const currentTime = String(hours)+ String(minute)
-      // 2227
+//   setTimeout (() => {
 
-      const list = document.querySelectorAll('.timeline .swiper-slide')
-      console.log(list);
+//     const date = new Date()
+//     const hours = date.getHours() < 10 ? '0'+date.getHours() : date.getHours()
+//     const minute = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
+//     const currentTime = String(hours) + String(minute)
+//     console.log(currentTime);
+//     console.log(date)
     
-      for(let index = 0;  index < list.length; index++ ){
+//     const list = document.querySelectorAll('.timeline .swiper-slide')
+//     console.log(list);
+
+//     for (let index = 0; index < list.length; index++) {
+//       const h3 = list[index].children[0]
+//       const span = list[index].children[1]
+//       console.log(span);
+//       console.log(h3);
+
+//       if(index == list.length - 1 ){
+//         h3.classList.add('active');
+//       }
+//     }
+
+//     var currentProgramTime = span.innerText.substr(3,2) + span.innerText.substr(6)
+//     var nextProgramTime = list[index+1].children[1].innerText.substr(3,2) + list[index+1].children[1].innerText.substr(6)
+//     console.log(currentProgramTime);
+//     console.log(nextProgramTime);
+//     if(currentTime >= currentProgramTime &&  currentTime < nextProgramTime ){
+//                     h3.classList.add('active')
+//                     // break
+//     }
+//   }, 1000)
+// };
+
+
+
+
+// window.onLoad = () =>{
+
+//   setInterval(()=>{
+//       const date = new Date()
+//       const hours =  date.getHours() < 10 ? '0'+date.getHours() : date.getHours() 
+//       const minute = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
+//       const currentTime = String(hours)+ String(minute)
+//       // 2227
+//     console.log(date);
+
+//       const list = document.querySelectorAll('.timeline .swiper-slide')
+//       console.log(list);
+    
+//       for(let index = 0;  index < list.length; index++ ){
  
-          // const {children: [h3,span]} = list[index]
-          const h3 = list[index].children[0]
-          const span = list[index].children[1]
-          // 마지막 프로그램은 앞 뒤로 비교할 수 있는 프로그램이 없기에 무조건 활성화 시킴.
-          if(index === list.length - 1){
-              h3.classList.add('active')
-              break // 여기까지만 코드가 동작을하고 아래 부분이 무시되 돌지 않아
-          }
-          //'AM 12:34' 0~7 substr(시작 인덱스, 시작인덱스부터 가져올 스트링의 길이)
+//           const {children: [h3,span]} = list[index]
+//           // const h3 = list[index].children[0]
+//           // const span = list[index].children[1]
+//           // 마지막 프로그램은 앞 뒤로 비교할 수 있는 프로그램이 없기에 무조건 활성화 시킴.
+//           if(index === list.length - 1){
+//               h3.classList.add('active')
+//               break // 여기까지만 코드가 동작을하고 아래 부분이 무시되 돌지 않아
+//           }
+//           //'AM 12:34' 0~7 substr(시작 인덱스, 시작인덱스부터 가져올 스트링의 길이)
 
-          // 프로그램 사이사이 시간을 구하는 구간
-          var currentProgramTime = span.innerText.substr(3,2) + span.innerText.substr(6) // 0127
-          var nextProgramTime = list[index+1].children[1].innerText.substr(3,2) + list[index+1].children[1].innerText.substr(6) // 1927
+//           // 프로그램 사이사이 시간을 구하는 구간
+//           var currentProgramTime = span.innerText.substr(3,2) + span.innerText.substr(6) // 0127
+//           var nextProgramTime = list[index+1].children[1].innerText.substr(3,2) + list[index+1].children[1].innerText.substr(6) // 1927
 
-          if(currentTime >= currentProgramTime &&  currentTime < nextProgramTime ){
-              h3.classList.add('active')
-              break
-          }
-      }
-  }, 1000)
-}
+//           if(currentTime >= currentProgramTime &&  currentTime < nextProgramTime ){
+//               h3.classList.add('active')
+//               break
+//           }
+//       }
+//   }, 1000)
+// };
 
 // 최신 프로그램
 var swiper = new Swiper(".new", {
@@ -101,21 +141,22 @@ var swiper = new Swiper(".new", {
 var swiper = new Swiper(".best", {
   slidesPerView: 2,
   spaceBetween: 5,
-  loop: true,
+  // loop: true,
   breakpoints: {
     431: {
       slidesPerView: 3,
       spaceBetween: 30,
-      loop: true,
+      // loop: true,
     },
     1200: {
       slidesPerView: 4,
       spaceBetween: 40,
+      invert: false,
       navigation: {
         nextEl: ".control03 > .swiper-button-next",
         prevEl: ".control03 > .swiper-button-prev",
       },
-      loop: true,
+      loop:true,
     },
   },
 });
@@ -322,22 +363,22 @@ var swiper12 = new Swiper(".agency", {
   },
 });
 
-//모바일 나브 
-window.onload = () => { };
-const gnb = document.querySelector("ul.gnb01");
-function addOn() {
-  // this.classList.add("on");
-  gnb.classList.add("on");
-  // .classList는 IE9이하 버전에서는 작동하지 않는다.
-}
-let removeOn = () => {
-  gnb.classList.remove("on");
-};
-const mMenuBt = document.querySelector(".mMenuBt");
-const closeBt = document.querySelector(".close");
+// //모바일 나브 
+// window.onload = () => { };
+// const gnb = document.querySelector("ul.gnb01");
+// function addOn() {
+//   // this.classList.add("on");
+//   gnb.classList.add("on");
+//   // .classList는 IE9이하 버전에서는 작동하지 않는다.
+// }
+// let removeOn = () => {
+//   gnb.classList.remove("on");
+// };
+// const mMenuBt = document.querySelector(".mMenuBt");
+// const closeBt = document.querySelector(".close");
 
-mMenuBt.addEventListener('click', addOn);
-closeBt.addEventListener('click', removeOn);
+// mMenuBt.addEventListener('click', addOn);
+// closeBt.addEventListener('click', removeOn);
 
 
 
