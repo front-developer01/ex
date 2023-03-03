@@ -19,6 +19,7 @@ var swiper = new Swiper(".timeline", {
   slidesPerView: 3,
   spaceBetween: 0,
   loop: true,
+  centeredSlides: true,
   breakpoints: {
     431: {
       slidesPerView: 4,
@@ -33,56 +34,127 @@ var swiper = new Swiper(".timeline", {
         prevEl: ".control02 > .swiper-button-prev",
       },
       loop: true,
+      centeredSlides: true,
     },
   },
 });
 
-window.onload = () => {
 
-  setTimeout (() => {
+// --------------------------------------------
+// window.onload = () => {
+//   setInterval(() => {
+//     const date = new Date(DateString);
+//     console.log(date.toLocaleTimeString("ko-KR"));
+//   },1000)
+// };
 
-    const day = new Date();
-    // 2. UTC 시간 계산
-    const utc = day.getTime() + (day.getTimezoneOffset() * 60 * 1000);
-    // 3. UTC to KST (UTC + 9시간)
-    const KR_TIME_DIFF = 9 * 60 * 60 * 1000;  //한국 시간(KST)은 UTC시간보다 9시간 더 빠르므로 9시간을 밀리초 단위로 변환.
-    const kr = new Date(utc + (KR_TIME_DIFF));  //UTC 시간을 한국 시간으로 변환하기 위해 utc 밀리초 값에 9시간을 더함.
+const date = new Date();
+var options = { hour: "numeric", minute: "numeric" };
+console.log(date.toLocaleTimeString("ko-KR", options));
+var hours = date.getHours();
+console.log(hours)
+var min = date.getMinutes();
+console.log(min)
+const currentTime = String(hours) + String(minute)
+// console.log()
 
-    // console.log(kr);
+// const day = new Date();
+//     // 2. UTC 시간 계산
+//     const utc = day.getTime() + (day.getTimezoneOffset() * 60 * 1000);
+//     // 3. UTC to KST (UTC + 9시간)
+//     const KR_TIME_DIFF = 9 * 60 * 60 * 1000;  //한국 시간(KST)은 UTC시간보다 9시간 더 빠르므로 9시간을 밀리초 단위로 변환.
+//     const kr = new Date(utc + (KR_TIME_DIFF));  //UTC 시간을 한국 시간으로 변환하기 위해 utc 밀리초 값에 9시간을 더함.
 
-    const date = (kr);
-    console.log(date);
-    const hours = date.getHours() < 10 ? '0'+date.getHours() : date.getHours()
-    // console.log(hours)
-    const minute = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
-    // console.log(minute);
-    const currentTime = String(hours) + String(minute)
-    // console.log(currentTime);
+//     // console.log(kr);
+
+//     const date = (kr);
+//     console.log(date);
+//     const hours = date.getHours() < 10 ? '0'+date.getHours() : date.getHours()
+//     // console.log(hours)
+//     const minute = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
+//     // console.log(minute);
+//     const currentTime = String(hours) + String(minute)
+//     console.log(currentTime);
+
+
+ // 인터내셔널(Intl) 사용해보기
+        // Intl.DateTimeFormat
+        // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+
+        // 한국식으로 날짜 포맷팅 
+        // let day2 = new Date();
+        // let krDay = new Intl.DateTimeFormat('kr').format(day2);
+        // console.log(krDay);
+
+        // options = {
+        //     weekday: 'long',
+        //     year: 'numeric',
+        //     month: 'long',
+        //     day: 'numeric',
+        //     dayPeriod: "short",
+        //     hour: 'numeric',
+        //     hour12: false,
+        //     minute: 'numeric',
+        //     second: 'numeric',
+        //     timeZoneName: 'short'
+        // };
+        // let krFullDay = new Intl.DateTimeFormat('kr', options).format(day2);
+        // console.log(krFullDay);
+
+
+// ------------------------------------
+
+// window.onload = () => {
+
+//   setInterval (() => {
+
+//     const day = new Date();
+//     // 2. UTC 시간 계산
+//     const utc = day.getTime() + (day.getTimezoneOffset() * 60 * 1000);
+//     // 3. UTC to KST (UTC + 9시간)
+//     const KR_TIME_DIFF = 9 * 60 * 60 * 1000;  //한국 시간(KST)은 UTC시간보다 9시간 더 빠르므로 9시간을 밀리초 단위로 변환.
+//     const kr = new Date(utc + (KR_TIME_DIFF));  //UTC 시간을 한국 시간으로 변환하기 위해 utc 밀리초 값에 9시간을 더함.
+
+//     // console.log(kr);
+
+//     const date = (kr);
+//     console.log(date);
+//     const hours = date.getHours() < 10 ? '0'+date.getHours() : date.getHours()
+//     // console.log(hours)
+//     const minute = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
+//     // console.log(minute);
+//     const currentTime = String(hours) + String(minute)
+//     console.log(currentTime);
     
-    const list = document.querySelectorAll('.timeline .swiper-slide')
-    // console.log(list);
-    for (let index = 0; index < list.length; index++) {
-      const h3 = list[index].children[0]
-      const span = list[index].children[1]
-      // console.log(span);
-      // console.log(h3);
+//     let list = document.querySelectorAll('.timeline .swiper-slide')
+//     // console.log(list);
+//     for (let index = 0; index < list.length; index++) {
+//       const slide = list[index]
+//       const h3 = list[index].children[0]
+//       const span = list[index].children[1]
+//       // console.log(span);
+//       // console.log(h3);
 
-      if(index === list.length - 1){
-        h3.classList.add('active');
-        break
-      }
+//       if(index === list.length - 1){
+//         h3.classList.add('active');
+//         break
+//       }
 
-      var currentProgramTime = span.innerText.substr(3,2) + span.innerText.substr(6)
-      var nextProgramTime = list[index+1].children[1].innerText.substr(3,2) + list[index+1].children[1].innerText.substr(6)
-      // console.log(currentProgramTime);
-      // console.log(nextProgramTime);
-      if(currentTime >= currentProgramTime &&  currentTime < nextProgramTime ){
-        h3.classList.add('active')
-      }
+//       var currentProgramTime = span.innerText.substr(3,2) + span.innerText.substr(6)
+//       var nextProgramTime = list[index+1].children[1].innerText.substr(3,2) + list[index+1].children[1].innerText.substr(6)
+//       // console.log(currentProgramTime);
+//       // console.log(nextProgramTime);
+//       $('.timeline .swiper-slide').removeClass('swiper-slide-active')
+//       $('.timeline .swiper-slide').removeClass('swiper-slide-prev')
+//       $('.timeline .swiper-slide').removeClass('swiper-slide-next')
+//       if(currentTime >= currentProgramTime &&  currentTime < nextProgramTime ){
+//         slide.classList.add('swiper-slide-active')
+//         h3.classList.add('active')
+//       }
 
-    };
-  }, 1000)
-};
+//     };
+//   }, 1000)
+// };
 
 // else {
 //   if (index !== list.length -1){
@@ -90,7 +162,7 @@ window.onload = () => {
 //   }
 
 // 최신 프로그램
-var swiper = new Swiper(".new", {
+var swiper01 = new Swiper(".new", {
   slidesPerView: 2,
   spaceBetween: 5,
   loop: true,
@@ -114,10 +186,17 @@ var swiper = new Swiper(".new", {
 
 
 // 주간 best 방송
-var swiper = new Swiper(".swiper.best", {
+var swiper02 = new Swiper(".swiper.best", {
   slidesPerView: 2,
   spaceBetween: 5,
-  // loop: true,
+  loop: true,
+  autoplay: {
+    delay: 500,
+    disableOnInteraction: false
+  },
+  observer: true,
+  observeParents: true,
+  // observeSlideChildren: false,
   breakpoints: {
     431: {
       slidesPerView: 3,
@@ -127,12 +206,10 @@ var swiper = new Swiper(".swiper.best", {
     1200: {
       slidesPerView: 4,
       spaceBetween: 40,
-      invert: false,
       navigation: {
         nextEl: ".control03 > .swiper-button-next",
         prevEl: ".control03 > .swiper-button-prev",
       },
-      loop:true,
     },
   },
 });
@@ -152,6 +229,8 @@ Array.from(tabButton01).forEach((eachButton, index) => {
     tabBoxs[index].classList.add("on");
     // 내가 누른 탭버튼과 인덱스번호가 같은 탭박스에 class on추가
     this.classList.add("on");
+    swiper01.update()
+    swiper02.update()
   });
 });
 tabButton01[0].click(); // 첫번째 탭 켜기
