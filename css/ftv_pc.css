@@ -191,7 +191,7 @@
     border-bottom: 4px solid #2f4693;
 }
 
-.timeline .swiper-wrapper .swiper-slide h3:active {
+.timeline .swiper-wrapper .swiper-slide h3.active {
     border-bottom: 4px solid #2f4693;
 }
 
