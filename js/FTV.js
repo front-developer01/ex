@@ -37,43 +37,53 @@ var swiper = new Swiper(".timeline", {
   },
 });
 
-// window.onload = () => {
+window.onload = () => {
 
-//   setTimeout (() => {
+  setTimeout (() => {
 
-//     const date = new Date()
-//     const hours = date.getHours() < 10 ? '0'+date.getHours() : date.getHours()
-//     const minute = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
-//     const currentTime = String(hours) + String(minute)
-//     console.log(currentTime);
-//     console.log(date)
+
+    const day = new Date();
+    // 2. UTC 시간 계산
+    const utc = day.getTime() + (day.getTimezoneOffset() * 60 * 1000);
+    // 3. UTC to KST (UTC + 9시간)
+    const KR_TIME_DIFF = 9 * 60 * 60 * 1000;  //한국 시간(KST)은 UTC시간보다 9시간 더 빠르므로 9시간을 밀리초 단위로 변환.
+    const kr = new Date(utc + (KR_TIME_DIFF));  //UTC 시간을 한국 시간으로 변환하기 위해 utc 밀리초 값에 9시간을 더함.
+
+    // console.log(kr);
+
+    const date = (kr);
+    console.log(date);
+    const hours = date.getHours() < 10 ? '0'+date.getHours() : date.getHours()
+    // console.log(hours);
+    const minute = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
+    // console.log(minute);
+    const currentTime = String(hours) + String(minute)
+    // console.log(currentTime);
     
-//     const list = document.querySelectorAll('.timeline .swiper-slide')
-//     console.log(list);
+    const list = document.querySelectorAll('.timeline .swiper-slide')
+    // console.log(list);
 
-//     for (let index = 0; index < list.length; index++) {
-//       const h3 = list[index].children[0]
-//       const span = list[index].children[1]
-//       console.log(span);
-//       console.log(h3);
+    for (let index = 0; index < list.length; index++) {
+      const h3 = list[index].children[0]
+      const span = list[index].children[1]
+      // console.log(span);
+      // console.log(h3);
 
-//       if(index == list.length - 1 ){
-//         h3.classList.add('active');
-//       }
-//     }
+      if(index == list.length - 1 ){
+        h3.classList.add('active');
+      }
+    }
 
-//     var currentProgramTime = span.innerText.substr(3,2) + span.innerText.substr(6)
-//     var nextProgramTime = list[index+1].children[1].innerText.substr(3,2) + list[index+1].children[1].innerText.substr(6)
-//     console.log(currentProgramTime);
-//     console.log(nextProgramTime);
-//     if(currentTime >= currentProgramTime &&  currentTime < nextProgramTime ){
-//                     h3.classList.add('active')
-//                     // break
-//     }
-//   }, 1000)
-// };
-
-
+    var currentProgramTime = span.innerText.substr(3,2) + span.innerText.substr(6)
+    var nextProgramTime = list[index+1].children[1].innerText.substr(3,2) + list[index+1].children[1].innerText.substr(6)
+    // console.log(currentProgramTime);
+    // console.log(nextProgramTime);
+    if(currentTime >= currentProgramTime &&  currentTime < nextProgramTime ){
+                    h3.classList.add('active')
+                    // break
+    }
+  }, 1000)
+};
 
 
 // window.onLoad = () =>{
@@ -138,7 +148,7 @@ var swiper = new Swiper(".new", {
 
 
 // 주간 best 방송
-var swiper = new Swiper(".best", {
+var swiper = new Swiper(".swiper.best", {
   slidesPerView: 2,
   spaceBetween: 5,
   // loop: true,
