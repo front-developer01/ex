@@ -20,6 +20,7 @@ var swiper = new Swiper(".timeline", {
   spaceBetween: 0,
   loop: true,
   centeredSlides: true,
+  // initialSlide: [index],
   breakpoints: {
     431: {
       slidesPerView: 4,
@@ -51,7 +52,7 @@ var swiper = new Swiper(".timeline", {
 
 window.onload = () => {
 
-  setTimeout(() => {
+  setInterval(() => {
     const date = new Intl.DateTimeFormat("ko", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
     // console.log(date.toString());
     const currentTime = date.toString();
@@ -65,21 +66,53 @@ window.onload = () => {
       // console.log(span);
       // console.log(h3);
 
-      // if (index === list.length - 1) {
-      //   h3.classList.add('active');
-      //   break
-      // }
+      if (index === list.length - 1) {
+        h3.classList.add('active');
+        break
+      }
 
       var currentProgramTime = span.innerText.substr(3)
       var nextProgramTime = list[index+1].children[1].innerText.substr(3)
       // console.log(currentProgramTime);
-      console.log(nextProgramTime);
+      // console.log(nextProgramTime);
       if (currentTime >= currentProgramTime && currentTime < nextProgramTime) {
         h3.classList.add('active')
       }
     };
-  }, 1000)
+  }, 10000)
 };
+
+// window.onload = () => {
+
+//   setTimeout(() => {
+//     const date = new Intl.DateTimeFormat("ko", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
+//     // console.log(date.toString());
+//     const currentTime = date.toString();
+//     console.log(currentTime);
+
+//     let list = document.querySelectorAll('.timeline .swiper-slide')
+//     // console.log(list);
+//     for (let index = 0; index < list.length; index++) {
+//       const h3 = list[index].children[0]
+//       const span = list[index].children[1]
+//       // console.log(span);
+//       // console.log(h3);
+
+//       if (index === list.length - 1) {
+//         h3.classList.add('active');
+//         break
+//       }
+
+//       var currentProgramTime = span.innerText.substr(3)
+//       var nextProgramTime = list[index+1].children[1].innerText.substr(3)
+//       // console.log(currentProgramTime);
+//       console.log(nextProgramTime);
+//       if (currentTime >= currentProgramTime && currentTime < nextProgramTime) {
+//         h3.classList.add('active')
+//       }
+//     };
+//   }, 1000)
+// };
 
   // 최신 프로그램
   var swiper01 = new Swiper(".new", {
