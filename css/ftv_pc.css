@@ -194,7 +194,10 @@
 .timeline .swiper-wrapper .swiper-slide h3.active {
     border-bottom: 4px solid #2f4693;
 }
+/* .timeline .swiper-wrapper .swiper-slide.swiper-slide-active h3{
 
+    border-bottom: 4px solid #2f4693;
+} */
 .timeline .swiper-wrapper .swiper-slide span {
     font-size: 0.9375rem;
     font-weight: 700;

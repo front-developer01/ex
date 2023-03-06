@@ -81,3 +81,78 @@ window.onload = () => {
       };
     }, 1000)
   };
+
+
+
+  window.onload = () => {
+
+    setInterval(() => {
+      // const TIME_ZONE = 9 * 60 * 60 * 1000; 
+      const date = new Intl.DateTimeFormat("utc", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
+      // console.log(date.toString());
+      const currentTime = date.toString();
+      console.log(currentTime);
+      // 방송 배열[0~37] 만들기, 00시는 24로 처리, html에서 해당 방송을 텍스트 바꿔치기
+      // 기존 인덱스 뽑아오는 for문 제거
+      // 새 for문에서는 값비교를 한다. [JS] 배열의 특정 값 찾기 (find, filter)
+      // 현재 시간을 추출해서 length=5 스트링이 내가 38개 만들어 놓은 방송 배열[0~37]에서 같은 값이 있으면, 그의 인덱스 번호를 받아와라
+      // timeline.slideTo(index); 해당슬라이드에 s-s-a
+      // 불켜주는 이벤트는 css에서 처리 s-s-a의 h3{} p.197
+  
+      let list = document.querySelectorAll('.timeline .swiper-slide')
+      // console.log(list);
+      for (var index = 0; index < list.length; index++) {
+        const h3 = list[index].children[0]
+        const span = list[index].children[1]
+        // console.log(span);
+        // console.log(h3);
+  
+        if (index === list.length - 1) {
+          // h3.classList.add('active');
+          break
+        }
+  
+        var prevTime = span.innerText.substr(3)
+        // console.log(currentProgramTime);
+        var nextTime = list[index+1].children[1].innerText.substr(3)
+        // console.log(nextProgramTime);
+        if (currentTime >= prevTime && currentTime < nextTime) {
+          h3.classList.add('active')
+        }
+      };
+      console.log(index)
+  
+    }, 10000)
+  };
+
+  // window.onload = () => {
+
+//   setTimeout(() => {
+//     const date = new Intl.DateTimeFormat("ko", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
+//     // console.log(date.toString());
+//     const currentTime = date.toString();
+//     console.log(currentTime);
+
+//     let list = document.querySelectorAll('.timeline .swiper-slide')
+//     // console.log(list);
+//     for (let index = 0; index < list.length; index++) {
+//       const h3 = list[index].children[0]
+//       const span = list[index].children[1]
+//       // console.log(span);
+//       // console.log(h3);
+
+//       if (index === list.length - 1) {
+//         h3.classList.add('active');
+//         break
+//       }
+
+//       var currentProgramTime = span.innerText.substr(3)
+//       var nextProgramTime = list[index+1].children[1].innerText.substr(3)
+//       // console.log(currentProgramTime);
+//       console.log(nextProgramTime);
+//       if (currentTime >= currentProgramTime && currentTime < nextProgramTime) {
+//         h3.classList.add('active')
+//       }
+//     };
+//   }, 1000)
+// };
