@@ -20,6 +20,8 @@ var timeline = new Swiper(".timeline", {
   spaceBetween: 0,
   loop: true,
   centeredSlides: true,
+  observer: true,
+  observeParents: true,
   breakpoints: {
     431: {
       slidesPerView: 4,
@@ -72,7 +74,7 @@ var timeline = new Swiper(".timeline", {
 
     let list = document.querySelectorAll('.timeline .swiper-slide')
     // console.log(list);
-    for (let index = 0; index < list.length; index++) {
+    for (var index = 0; index < list.length; index++) {
       const h3 = list[index].children[0]
       const span = list[index].children[1]
       // console.log(span);
@@ -90,11 +92,15 @@ var timeline = new Swiper(".timeline", {
       if (currentTime >= currentProgramTime && currentTime < nextProgramTime) {
         h3.classList.add('active')
       }
-      var index1 = list[index].children[1]
-      timeline.slideTo(index1);
+      timeline.slideTo(0, 0, true);
+      timeline.update();
+      timeline.on('transitionEnd', function() {
+      console.log('now index :::', swiper.realIndex);
+      });
     };
-  }, 1000)
+  }, 10000)
 };
+
 
 
   // 최신 프로그램
