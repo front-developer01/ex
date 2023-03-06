@@ -66,7 +66,7 @@ var timeline = new Swiper(".timeline", {
 
   window.onload = () => {
 
-  setTimeout(() => {
+  setInterval(() => {
     const date = new Intl.DateTimeFormat("ko", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
     // console.log(date.toString());
     const currentTime = date.toString();
@@ -81,7 +81,7 @@ var timeline = new Swiper(".timeline", {
       // console.log(h3);
 
       if (index === list.length - 1) {
-        // h3.classList.add('active');
+        h3.classList.add('active');
         break
       }
 
@@ -91,14 +91,11 @@ var timeline = new Swiper(".timeline", {
       // console.log(nextProgramTime);
       if (currentTime >= currentProgramTime && currentTime < nextProgramTime) {
         h3.classList.add('active')
+        timeline.slideTo(index, 0, true);
+        break
       }
-      timeline.slideTo(0, 0, true);
-      timeline.update();
-      timeline.on('transitionEnd', function() {
-      console.log('now index :::', swiper.realIndex);
-      });
     };
-  }, 10000)
+  }, 1000)
 };
 
 
