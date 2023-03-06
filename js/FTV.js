@@ -1,5 +1,5 @@
 // full banner
-var swiper = new Swiper(".banner", {
+var banner = new Swiper(".banner", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -9,7 +9,7 @@ var swiper = new Swiper(".banner", {
   },
   loop: true,
   autoplay: {
-    delay: 2000,
+    delay: 3000,
     disableOnInteraction: false
   },
 });
@@ -43,26 +43,6 @@ var timeline = new Swiper(".timeline", {
 
 
 // --------------------------------------------
-
-// 한국 기준 현재시간 구하고 4개의 문자로 받는다.
-
-// const date = new Intl.DateTimeFormat("en-US", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
-// console.log(date.toString());
-// const currentTime = date.toString();
-// console.log(currentTime);
-
-// const date1 = new Intl.DateTimeFormat("ar-EG", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
-
-// console.log(date1);
-
- // 방송 배열[0~37] 만들기, 00시는 24로 처리, html에서 해당 방송을 텍스트 바꿔치기
-    // 기존 인덱스 뽑아오는 for문 제거
-    // 새 for문에서는 값비교를 한다. [JS] 배열의 특정 값 찾기 (find, filter)
-    // 현재 시간을 추출해서 length=5 스트링이 내가 38개 만들어 놓은 방송 배열[0~37]에서 같은 값이 있으면, 그의 인덱스 번호를 받아와라
-    // timeline.slideTo(index); 해당슬라이드에 s-s-a
-    // 불켜주는 이벤트는 css에서 처리 s-s-a의 h3{} p.197
-
-
 
   window.onload = () => {
 
@@ -129,10 +109,6 @@ var timeline = new Swiper(".timeline", {
     slidesPerView: 2,
     spaceBetween: 5,
     loop: true,
-    autoplay: {
-      delay: 500,
-      disableOnInteraction: false
-    },
     observer: true,
     observeParents: true,
     // observeSlideChildren: false,
