@@ -80,17 +80,17 @@
     // http://www.khoa.go.kr/api/oceangrid/preOcean/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&type=KOREA&ResultType=json / 전국해양예보 / 지역별 상이 / 지역명 따로 분류
     // https://www.khoa.go.kr/daily_ocean/Downloads/20230307/do_korea_20230307_09.png / 해양예보도 이미지 자료 자체 다운로드 받아야 함 . 현재 프로젝트에서는 필요 없음
        
-        $.ajax({
-            type: "GET",
-            url: "http://www.khoa.go.kr/api/oceangrid/fcIndexOfType/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&Type=SF&ResultType=json",
-            dataType: "json",
-            success: function(data) {
-                console.log(data);
-            },
-            error: function(xhr) {
-                console.log(xhr.status + "/" + xhr.errorText);
-            }
-        });
+        // $.ajax({
+        //     type: "GET",
+        //     url: "http://www.khoa.go.kr/api/oceangrid/fcIndexOfType/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&Type=SF&ResultType=json",
+        //     dataType: "json",
+        //     success: function(data) {
+        //         console.log(data);
+        //     },
+        //     error: function(xhr) {
+        //         console.log(xhr.status + "/" + xhr.errorText);
+        //     }
+        // });
         // $.ajax({
         //     type: "GET",
         //     url: "data4.json",
@@ -136,8 +136,28 @@
 <body>
     <div class="main_content">
         <h1 class="content_title">google_map</h1>
-        <div id="map" style="width: 50%; height: 400px;"></div>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWWnuu0yV-ZuoZsEIODjp2lZjxvyqpigg&callback=initMap&region=kr"></script>
+        <div id="map" style="width: 450px; height: 510px;"></div>
     </div>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGXqVI2iQwjccmV4YR07X6CyrjGNAsl_Y&callback=initMap&v=weekly"
+    defer
+  ></script>
+  <script>
+    function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.031 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+};
+
+  </script>
 </body>
 </html>

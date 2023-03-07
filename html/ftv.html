@@ -11,8 +11,6 @@
     <link rel="stylesheet"  type="text/css" href="/ex/css/ftv_pc_common.css">
     <link rel="stylesheet" type="text/css" href="/ex/css/ftv_pc.css">
     <link rel="stylesheet" media="all and (max-width: 1199px)" href="/ex/css/ftv_m.css">
-    <script defer src="./index.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWWnuu0yV-ZuoZsEIODjp2lZjxvyqpigg&callback=initMap"></script>
 </head>
 
 <body>
@@ -892,7 +890,9 @@
             <div class="article07">
                 <div class="left">
                     <h3>조황정보</h3>
-                    <div id="map" class="map">지도</div>
+                    <div class="ocean">
+                        <div id="map">map</div>
+                    </div>
                 </div>
                 <div class="right">
                     <div class="smartStore">
@@ -1056,6 +1056,12 @@
             </div>
         </div>
     </footer>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGXqVI2iQwjccmV4YR07X6CyrjGNAsl_Y&callback=initMap"
+    ></script> -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGXqVI2iQwjccmV4YR07X6CyrjGNAsl_Y&callback=initMap&v=weekly"
+    defer
+  ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/ex/js/FTV.js"></script>

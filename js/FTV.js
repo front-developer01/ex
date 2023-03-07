@@ -44,7 +44,7 @@ var timeline = new Swiper(".timeline", {
 
 // --------------------------------------------
 
-  window.onload = () => {
+window.onload = () => {
 
   setInterval(() => {
     const date = new Intl.DateTimeFormat("ko", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
@@ -52,291 +52,347 @@ var timeline = new Swiper(".timeline", {
     const currentTime = date.toString();
     // console.log(currentTime);
 
-    let list = document.querySelectorAll('.timeline .swiper-slide')
+    let list = document.querySelectorAll('.timeline .swiper-slide');
     // console.log(list);
     for (var index = 0; index < list.length; index++) {
-      const h3 = list[index].children[0]
-      const span = list[index].children[1]
+      const h3 = list[index].children[0];
+      const span = list[index].children[1];
       // console.log(span);
       // console.log(h3);
 
       if (index === list.length - 1) {
         h3.classList.add('active');
-        break
+        break;
       }
 
-      var currentProgramTime = span.innerText.substr(3)
-      var nextProgramTime = list[index+1].children[1].innerText.substr(3)
+      var currentProgramTime = span.innerText.substr(3);
+      var nextProgramTime = list[index + 1].children[1].innerText.substr(3);
       // console.log(currentProgramTime);
       // console.log(nextProgramTime);
       if (currentTime >= currentProgramTime && currentTime < nextProgramTime) {
-        h3.classList.add('active')
+        h3.classList.add('active');
         timeline.slideTo(index, 0, true);
-        break
+        break;
       }
     };
-  }, 1000)
+  }, 1000);
 };
 
 
 
-  // 최신 프로그램
-  var swiper01 = new Swiper(".new", {
-    slidesPerView: 2,
-    spaceBetween: 5,
-    loop: true,
-    breakpoints: {
-      431: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: true,
+// 최신 프로그램
+var swiper01 = new Swiper(".new", {
+  slidesPerView: 2,
+  spaceBetween: 5,
+  loop: true,
+  breakpoints: {
+    431: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+      navigation: {
+        nextEl: ".control03 > .swiper-button-next",
+        prevEl: ".control03 > .swiper-button-prev",
       },
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-        navigation: {
-          nextEl: ".control03 > .swiper-button-next",
-          prevEl: ".control03 > .swiper-button-prev",
-        },
-        loop: true,
+      loop: true,
+    },
+  },
+});
+
+
+// 주간 best 방송
+var swiper02 = new Swiper(".swiper.best", {
+  slidesPerView: 2,
+  spaceBetween: 5,
+  loop: true,
+  observer: true,
+  observeParents: true,
+  // observeSlideChildren: false,
+  breakpoints: {
+    431: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      // loop: true,
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+      navigation: {
+        nextEl: ".control03 > .swiper-button-next",
+        prevEl: ".control03 > .swiper-button-prev",
       },
     },
+  },
+});
+
+// swiper01.controller.control01 = banner;
+
+// 최신, 주간 탭구조
+let tabButton01 = document.querySelectorAll('.tabButton01 > button'); // 탭버튼
+Array.from(tabButton01).forEach((eachButton, index) => {
+  eachButton.addEventListener('click', function () {
+    let tabBoxs = document.querySelectorAll('.tabContent01 .swiper'); // 탭박스
+    for (var i = 0; i < tabBoxs.length; i++) {
+      tabBoxs[i].classList.remove("on");
+      tabButton01[i].classList.remove("on");
+      // 모든 버튼과 박스에서 on제거
+    }
+    tabBoxs[index].classList.add("on");
+    // 내가 누른 탭버튼과 인덱스번호가 같은 탭박스에 class on추가
+    this.classList.add("on");
   });
+});
+tabButton01[0].click(); // 첫번째 탭 켜기
 
-
-  // 주간 best 방송
-  var swiper02 = new Swiper(".swiper.best", {
-    slidesPerView: 2,
-    spaceBetween: 5,
-    loop: true,
-    observer: true,
-    observeParents: true,
-    // observeSlideChildren: false,
-    breakpoints: {
-      431: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        // loop: true,
-      },
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-        navigation: {
-          nextEl: ".control03 > .swiper-button-next",
-          prevEl: ".control03 > .swiper-button-prev",
-        },
-      },
+//  종합
+var swiper05 = new Swiper(".overall", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  breakpoints: {
+    431: {
+      slidesPerView: 2,
+      spaceBetween: 40,
     },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+  },
+});
+
+//  민물
+var swiper06 = new Swiper(".freshwater", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  breakpoints: {
+    431: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+  },
+});
+
+//  바다
+var swiper07 = new Swiper(".sea", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  breakpoints: {
+    431: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+  },
+});
+
+//  루어
+var swiper08 = new Swiper(".lure", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  breakpoints: {
+    431: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+  },
+});
+
+// 종합 ~ 루어 탭구조
+let tabButton02 = document.querySelectorAll('.tabButton02 > button'); // 탭버튼
+Array.from(tabButton02).forEach((eachButton, index) => {
+  eachButton.addEventListener('click', function () {
+    let tabBoxs = document.querySelectorAll('.tabContent02 .swiper'); // 탭박스
+    for (var i = 0; i < tabBoxs.length; i++) {
+      tabBoxs[i].classList.remove("on");
+      tabButton02[i].classList.remove("on");
+      // 모든 버튼과 박스에서 on제거
+    }
+    tabBoxs[index].classList.add("on");
+    // 내가 누른 탭버튼과 인덱스번호가 같은 탭박스에 class on추가
+    this.classList.add("on");
   });
+});
+tabButton02[0].click(); // 첫번째 탭 켜기
 
-  // swiper01.controller.control01 = banner;
+// 최신동영상
+var swiper09 = new Swiper(".youtube", {
+  slidesPerView: 2,
+  spaceBetween: 5,
+  loop: true,
+  breakpoints: {
+    431: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+    },
+    800: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      loop: true,
+    },
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 25,
+      navigation: {
+        nextEl: ".control04 > .swiper-button-next",
+        prevEl: ".control04 > .swiper-button-prev",
+      },
+      loop: true,
+    },
+  },
+});
 
-  // 최신, 주간 탭구조
-  let tabButton01 = document.querySelectorAll('.tabButton01 > button'); // 탭버튼
-  Array.from(tabButton01).forEach((eachButton, index) => {
-    eachButton.addEventListener('click', function () {
-      let tabBoxs = document.querySelectorAll('.tabContent01 .swiper'); // 탭박스
-      for (var i = 0; i < tabBoxs.length; i++) {
-        tabBoxs[i].classList.remove("on");
-        tabButton01[i].classList.remove("on");
-        // 모든 버튼과 박스에서 on제거
-      }
-      tabBoxs[index].classList.add("on");
-      // 내가 누른 탭버튼과 인덱스번호가 같은 탭박스에 class on추가
-      this.classList.add("on");
+// 무료동영상
+var swiper10 = new Swiper(".free", {
+  slidesPerView: 2,
+  spaceBetween: 5,
+  loop: true,
+  breakpoints: {
+    431: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+    },
+    800: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      loop: true,
+    },
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 25,
+      navigation: {
+        nextEl: ".control05 > .swiper-button-next",
+        prevEl: ".control05 > .swiper-button-prev",
+      },
+      loop: true,
+    },
+  },
+});
+
+//스마트스토어
+var swiper11 = new Swiper(".store", {
+  slidesPerView: 2,
+  spaceBetween: 5,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    800: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
+});
+
+//협력기관
+var swiper12 = new Swiper(".agency", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  breakpoints: {
+    431: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
+});
+
+// Initialize and add the map
+function initMap() {
+  // const korea = { lat: 36.1750231, lng: 127.7834302 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 6,
+    center: { lat: 36.1750231, lng: 127.7834302 }
+  });
+};
+  for (var i = 0; i < locations.length; i++) {
+    var marker = new google.maps.Marker({
+      position: new google.maps.Latlng(locations[1], locations[2]),
+      map: map,
+      label: location[i].place,
     });
-  });
-  tabButton01[0].click(); // 첫번째 탭 켜기
+    // console.log(locations[i].lat);
+  };  
+  var locations = [
+  { place:"거문도", lat: 34.0485456, lng: 127.3183346 },
+  { place:"거제도", lat: 34.90544444, lng: 128.7629444 },
+];
+console.log(locations[i].lat);
+// d34.0485456!4d127.3183346
+// --------------------------------------------------
 
-  //  종합
-  var swiper05 = new Swiper(".overall", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    breakpoints: {
-      431: {
-        slidesPerView: 2,
-        spaceBetween: 40,
-      },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
-  });
 
-  //  민물
-  var swiper06 = new Swiper(".freshwater", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    breakpoints: {
-      431: {
-        slidesPerView: 2,
-        spaceBetween: 40,
-      },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
-  });
+$.ajax({
+  type: "GET",
+  url: "http://www.khoa.go.kr/api/oceangrid/fcIndexOfType/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&Type=SF&ResultType=json",
+  dataType: "json",
+  success: function (data) {
+    console.log(data);
+    var arr = [data]
+    console.log(arr);
+    arr.indexOf(`거문도`);
+    console.log(arr.indexOf());
+  },
+  error: function (xhr) {
+    console.log(xhr.status + "/" + xhr.errorText);
+  }
+});
 
-  //  바다
-  var swiper07 = new Swiper(".sea", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    breakpoints: {
-      431: {
-        slidesPerView: 2,
-        spaceBetween: 40,
-      },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
-  });
 
-  //  루어
-  var swiper08 = new Swiper(".lure", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    breakpoints: {
-      431: {
-        slidesPerView: 2,
-        spaceBetween: 40,
-      },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
-  });
 
-  // 종합 ~ 루어 탭구조
-  let tabButton02 = document.querySelectorAll('.tabButton02 > button'); // 탭버튼
-  Array.from(tabButton02).forEach((eachButton, index) => {
-    eachButton.addEventListener('click', function () {
-      let tabBoxs = document.querySelectorAll('.tabContent02 .swiper'); // 탭박스
-      for (var i = 0; i < tabBoxs.length; i++) {
-        tabBoxs[i].classList.remove("on");
-        tabButton02[i].classList.remove("on");
-        // 모든 버튼과 박스에서 on제거
-      }
-      tabBoxs[index].classList.add("on");
-      // 내가 누른 탭버튼과 인덱스번호가 같은 탭박스에 class on추가
-      this.classList.add("on");
-    });
-  });
-  tabButton02[0].click(); // 첫번째 탭 켜기
+  // // The marker, positioned at Uluru
+  // const marker = new google.maps.Marker({
+  //   position: korea,
+  //   map: map,
+  // });
 
-  // 최신동영상
-  var swiper09 = new Swiper(".youtube", {
-    slidesPerView: 2,
-    spaceBetween: 5,
-    loop: true,
-    breakpoints: {
-      431: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-      },
-      800: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        loop: true,
-      },
-      1200: {
-        slidesPerView: 5,
-        spaceBetween: 25,
-        navigation: {
-          nextEl: ".control04 > .swiper-button-next",
-          prevEl: ".control04 > .swiper-button-prev",
-        },
-        loop: true,
-      },
-    },
-  });
+//   for (var i = 0; i < locations.length; i++) {
+//       var marker = new google.maps.Marker({
+//           map: map,
+//           label: locations[i].place,
+//           position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+//       });
+//   }
+// }
+// const locations = [
+//   { place:"건대입구역", lat: 37.539922, lng: 127.070609 },
+//   { place:"어린이대공원역", lat: 37.547263, lng: 127.074181 },
+// ];
 
-  // 무료동영상
-  var swiper10 = new Swiper(".free", {
-    slidesPerView: 2,
-    spaceBetween: 5,
-    loop: true,
-    breakpoints: {
-      431: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-      },
-      800: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        loop: true,
-      },
-      1200: {
-        slidesPerView: 5,
-        spaceBetween: 25,
-        navigation: {
-          nextEl: ".control05 > .swiper-button-next",
-          prevEl: ".control05 > .swiper-button-prev",
-        },
-        loop: true,
-      },
-    },
-  });
-
-  //스마트스토어
-  var swiper11 = new Swiper(".store", {
-    slidesPerView: 2,
-    spaceBetween: 5,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      800: {
-        slidesPerView: 4,
-        spaceBetween: 10,
-      },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false
-    },
-  });
-
-  //협력기관
-  var swiper12 = new Swiper(".agency", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    breakpoints: {
-      431: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-      },
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false
-    },
-  });
-
-  window.initMap = function () {
-    const map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 37.5400456, lng: 126.9921017 },
-      zoom: 1,
-    });
-  };
 
 // //모바일 나브
 // window.onload = () => { };
