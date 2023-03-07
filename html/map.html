@@ -40,6 +40,7 @@
             padding: 10px 0;
         }
     </style>
+    <script src="gm.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script>
@@ -133,11 +134,10 @@
 </head>
 
 <body>
-    <div id="timeline">
-        <h2>현재 실시간 라이브</h2>
-        <div class="swiper-wrapper">
-            <div class="swiper-slide1"></div>
-        </div>
+    <div class="main_content">
+        <h1 class="content_title">google_map</h1>
+        <div id="map" style="width: 50%; height: 400px;"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWWnuu0yV-ZuoZsEIODjp2lZjxvyqpigg&callback=initMap&region=kr"></script>
     </div>
 </body>
 </html>

@@ -331,6 +331,13 @@ var timeline = new Swiper(".timeline", {
     },
   });
 
+  window.initMap = function () {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 37.5400456, lng: 126.9921017 },
+      zoom: 1,
+    });
+  };
+
 // //모바일 나브
 // window.onload = () => { };
 // const gnb = document.querySelector("ul.gnb01");

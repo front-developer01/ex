@@ -702,10 +702,10 @@
 .sec03 .inner .article07 .left .map {
     width: 450px;
     height: 510px;
-    background-color: #719ED2;
-    background-image: url(/ex/images/ftv/지도/지도70\ [Converted]-01.png);
-    background-position: 50% 50%;
-    background-size: contain;
+    /* background-color: #719ED2; */
+    /* background-image: url(/ex/images/ftv/지도/지도70\ [Converted]-01.png); */
+    /* background-position: 50% 50%; */
+    /* background-size: contain; */
     text-indent: -900px;
     border: 1px solid #000;
     border-radius: 10px;
