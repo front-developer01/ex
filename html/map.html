@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>$.ajax() 메서드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1,
+        h2 {
+            font-family: "굴림";
+            font-size: 14px;
+            margin-bottom: 10px;
+        }      
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        #wrap {
+            width: 204px;
+            margin: 20px auto;
+            text-align: center;            
+        }
+        #vis {
+            width: 204px;
+            height: 280px;
+            overflow: hidden;
+        }
+        #vis .subject {
+            width: 860px;
+            text-align: center;
+            overflow: hidden
+        }
+        #vis .subject > div {            
+            border: 2px solid #ff6600;
+            float: left;            
+            border-radius: 10px;
+            padding: 10px 0;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        // 이부분에 코드를 작성합니다.
+
+        // 요청변수
+        // 관측소 번호	관측소 명	       위도	   경도
+        //  TW_0088	    감천항	        35.052	129.003
+        //  TW_0089	    경포대해수욕장	 37.808	 128.931
+        //  TW_0095	    고래불해수욕장	 36.58	 129.454
+        //  DT_0042	    교본초	        34.704	128.306
+        //  TW_0091	    낙산해수욕장   	38.122	 128.65
+        //  KG_0025	    남해동부	    34.222	128.419
+        //  TW_0069	    대천해수욕장	36.274	126.457
+        //  TW_0094	    망상해수욕장	37.616	129.103
+        //  DT_0041	    복사초	        34.098	126.168
+        //  TW_0079	    상왕등도	    35.652	126.194
+        //  TW_0081	    생일도	        34.258	126.96
+        //  TW_0093	    속초해수욕장	38.198	128.631
+        //  TW_0090	    송정해수욕장	35.164	129.219
+        //  IE_0061	    신안가거초	    33.941	124.592
+        //  IE_0062	    옹진소청초	    37.423	124.738
+        //  DT_0039	    왕돌초	        36.719	129.732
+        //  TW_0080	    우이도	        34.543	125.802
+        //  KG_0102	    울릉도북서	    37.742	130.601
+        //  IE_0060	    이어도	        32.122	125.182
+        //  TW_0092	    임랑해수욕장	35.302	129.292
+        //  KG_0021	    제주남부	    32.09	126.965
+        //  KG_0028	    제주해협	    33.7	126.59
+        //  TW_0075	    중문해수욕장	33.234	126.409
+        //  TW_0062	    해운대해수욕장	35.148	129.17
+
+        
+    
+    // http://www.khoa.go.kr/api/oceangrid/obsWaveHight/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&ObsCode=TW_0088&Date=20230306&ResultType=json / 관측소 별 파고 / 관측소 좌표 따로 분류
+    // http://www.khoa.go.kr/api/oceangrid/fcIndexOfType/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&Type=SF&ResultType=json / 생활예보지수 바다낚시
+    // http://www.khoa.go.kr/api/oceangrid/preOcean/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&type=KOREA&ResultType=json / 전국해양예보 / 지역별 상이 / 지역명 따로 분류
+    // https://www.khoa.go.kr/daily_ocean/Downloads/20230307/do_korea_20230307_09.png / 해양예보도 이미지 자료 자체 다운로드 받아야 함 . 현재 프로젝트에서는 필요 없음
+       
+        $.ajax({
+            type: "GET",
+            url: "http://www.khoa.go.kr/api/oceangrid/fcIndexOfType/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&Type=SF&ResultType=json",
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+            },
+            error: function(xhr) {
+                console.log(xhr.status + "/" + xhr.errorText);
+            }
+        });
+        // $.ajax({
+        //     type: "GET",
+        //     url: "data4.json",
+        //     dataType: "json",
+        //     success: function(data) {
+        //         var elem = "";
+        //         $.each(data, function(index, obj) {
+        //             elem += `<div class="swiper-slide">`;
+        //             elem += `<h3>${this.name}</h3>`;
+        //             elem += `<span>${this.time}</span>`;
+        //             elem += `<p>${this.turn}</p>`;
+        //             elem += `<p>${this.desc}</p>`;
+        //             elem += `</div>`;
+        //             //교재 17번
+        //         });
+        //         // $(".swiper-slide1").append(elem);
+        //         $(".swiper-wrapper").append(elem);
+        //     },
+        //     error: function(xhr) {
+        //         console.log(xhr.status + "/" + xhr.errorText);
+        //     }
+        // });
+        // $(document).ready(function() {
+        //     var roll;
+        //     function play() {
+        //         roll = setInterval(function() {
+        //             $(".subject > div:first").insertAfter($(".subject > div:last"));
+        //         }, 2000);
+        //     }
+        //     function stop() {
+        //         clearInterval(roll);
+        //     }
+        //     $("#vis").hover(function() {
+        //         stop();
+        //     }, function() {
+        //         play();
+        //     });
+        //     play();
+        // });
+    </script>
+</head>
+
+<body>
+    <div id="timeline">
+        <h2>현재 실시간 라이브</h2>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide1"></div>
+        </div>
+    </div>
+</body>
+</html>
