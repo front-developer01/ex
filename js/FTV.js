@@ -331,29 +331,8 @@ var swiper12 = new Swiper(".agency", {
   },
 });
 
-// Initialize and add the map
-function initMap() {
-  // const korea = { lat: 36.1750231, lng: 127.7834302 };
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 6,
-    center: { lat: 36.1750231, lng: 127.7834302 }
-  });
-};
-  for (var i = 0; i < locations.length; i++) {
-    var marker = new google.maps.Marker({
-      position: new google.maps.Latlng(locations[1], locations[2]),
-      map: map,
-      label: location[i].place,
-    });
-    // console.log(locations[i].lat);
-  };  
-  var locations = [
-  { place:"거문도", lat: 34.0485456, lng: 127.3183346 },
-  { place:"거제도", lat: 34.90544444, lng: 128.7629444 },
-];
-console.log(locations[i].lat);
-// d34.0485456!4d127.3183346
-// --------------------------------------------------
+// -----------------------------------------------------------------
+// cosnt name = liis[i]['name']
 
 
 $.ajax({
@@ -361,16 +340,106 @@ $.ajax({
   url: "http://www.khoa.go.kr/api/oceangrid/fcIndexOfType/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&Type=SF&ResultType=json",
   dataType: "json",
   success: function (data) {
-    console.log(data);
-    var arr = [data]
-    console.log(arr);
-    arr.indexOf(`거문도`);
-    console.log(arr.indexOf());
+    // console.log(data);
+    var info = data;
+    // console.log(info.result.data);
+    var list = info.result.data;
+    // console.log(list);
+    const result = { 'geomundo': [] };
+    for (const obj of list) {
+      switch (obj['name']) {
+        case '거문도':
+          result['geomundo'].push(obj);
+          break;
+      }
+    }
+
   },
   error: function (xhr) {
     console.log(xhr.status + "/" + xhr.errorText);
-  }
+  },
 });
+
+// Initialize and add the map
+function initMap() {
+  // const korea = { lat: 36.1750231, lng: 127.7834302 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 6,
+    center: { lat: 36.1750231, lng: 127.7834302 }
+  });
+  // for(var i = 0; < name.length){}
+  // const markerPosition1 = {
+  //   lat: 34.0485456,
+  //   lng: 127.3183346
+  // };
+  // const markerPosition2 = {
+  //   lat: 34.90544444,
+  //   lng: 128.7629444
+  // };
+  // const marker1 = new google.maps.Marker({
+  //   position: markerPosition1,
+  //   map: map,
+  // });
+  // const marker2 = new google.maps.Marker({
+  //   position: markerPosition2,
+  //   map: map,
+  // });
+  //   for (var i = 0; i < locations.length; i++) {
+  //     const marker = new google.maps.Marker({
+  //       position: new google.maps.Latlng(locations[i].lat, locations[i].lng),
+  //       map: map,
+  //       label: locations[i].place,
+  //     });
+  //     // console.log(locations[i].lat);
+  //   };  
+  //   var locations = [
+  //   { place:"거문도", lat: 34.0485456, lng: 127.3183346 },
+  //   { place:"거제도", lat: 34.90544444, lng: 128.7629444 },
+  // ];
+};
+// -------------------------------------------------------
+
+
+// var geomundo = list.filter((e => e.name === "거문도"))
+// var geojedo = list.filter((e => e.name === "거제도"))
+// var busanSouth = list.filter((e => e.name === "부산남부"))
+// var busanEast = list.filter((e => e.name === "부산동부"))
+// var busanWest = list.filter((e => e.name === "부산서부"))
+// var shinjido = list.filter((e => e.name === "신지도"))
+// var yeondo = list.filter((e => e.name === "연도"))
+// var yokjido = list.filter((e => e.name === "욕지도"))
+// var ayajin = list.filter((e => e.name === "아야진항"))
+// var oeongch = list.filter((e => e.name === "외옹치항"))
+// var yokjido = list.filter((e => e.name === "울릉도"))
+// var ulsan = list.filter((e => e.name === "울산"))
+// var uljin = list.filter((e => e.name === "울진 후정"))
+// var pohang = list.filter((e => e.name === "포항"))
+// var hupo = list.filter((e => e.name === "후포"))
+// var gageodo = list.filter((e => e.name === "가거도"))
+// var gyema = list.filter((e => e.name === "계마항"))
+// var gukhwado = list.filter((e => e.name === "국화도"))
+// var mohang = list.filter((e => e.name === "모항항"))
+// var Sangwangdeungdo = list.filter((e => e.name === "상왕등도"))
+// var eocheongdo = list.filter((e => e.name === "어청도"))
+// var yeongheungdo = list.filter((e => e.name === "영흥도"))
+// var hajodo = list.filter((e => e.name === "하조도"))
+// var Kimnyeong = list.filter((e => e.name === "김녕"))
+// var seogwipo = list.filter((e => e.name === "서귀포"))
+// var seongsanpo = list.filter((e => e.name === "성산포"))
+// var chujado = list.filter((e => e.name === "추자도"))
+// console.log(chujado);
+
+
+// --------------------------------------------------
+
+
+// findData(json, 'number', (key, value, object)=>{
+//   console.log(key, value, object)
+// });
+
+// findData(json, 'address', (key, value, object)=>{
+//   console.log(key, value, object)
+// });
 
 
 
@@ -393,6 +462,7 @@ $.ajax({
 //   { place:"어린이대공원역", lat: 37.547263, lng: 127.074181 },
 // ];
 
+// -------------------------------------------------
 
 // //모바일 나브
 // window.onload = () => { };
