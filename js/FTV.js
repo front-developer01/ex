@@ -368,7 +368,7 @@ $.ajax({
 
     // 섬가져오기
     for (const obj of list) {
-      if(!result[obj['name']]){
+      if (!result[obj['name']]) {
         result[obj['name']] = []
       }
       result[obj['name']].push(obj)
@@ -383,7 +383,7 @@ $.ajax({
 
 // Initialize and add the map
 function initMap(islands) {
-  
+
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 36.1750231, lng: 127.7834302 },
     zoom: 6,
@@ -391,50 +391,35 @@ function initMap(islands) {
     mapTypeId: google.maps.MapTypeId.HYBRID,
   });
 
-  if(JSON.stringify(islands) !== '{}'){
-    for(const key in islands){
+  if (JSON.stringify(islands) !== '{}') {
+    for (const key in islands) {
       console.log(islands[key][0].lat, islands[key][0].lon, key)
       new google.maps.Marker({
         position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),
         map: map,
         label: {
-          text : key,
-          color: "#fff"},
+          text: key,
+          color: "yellow"
+        },
         optimized: true,
         icon: {
           url: "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_orange.png",
-          // labelOrigin: new google.maps.Point(-20, -10),
+          labelOrigin: new google.maps.Point(0, -10),
           // anchor: new google.maps.Point(0,0)
         },
       });
-
+      for(const key in island){new google.maps.InfoWindow();
+      google.maps.event.addListener(marker, 'click', (function (marker) {
+        return function () {
+          //html로 표시될 인포 윈도우의 내용
+          infowindow.setContent(island[key][0].name);
+          //인포윈도우가 표시될 위치
+          infowindow.open(map, marker);
+        };
+      })(marker));};
     }
   }
 };
-
-// if(JSON.stringify(islands) !== '{}'){
-//   for(const key in islands){
-//     console.log(islands[key][0].lat, islands[key][0].lon, key)
-//     new google.maps.Marker({
-//       position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),
-//       map: map,
-//       label: {
-//         text : key,
-//         color: "#FFFFFF"},
-//       optimized: true,
-//       icon: { 
-//         url: "http://maps.google.com/mapfiles/kml/paddle/blu-blank.png",
-//         // anchor: new google.maps.Point(0,0)
-//       },
-//     });
-
-//   }
-//   map.fitBounds(bounds);
-// }
-// };
-
-// -------------------------------------------------
-
 
 // -------------------------------------------------------
 
