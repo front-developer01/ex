@@ -389,19 +389,27 @@ function initMap(islands) {
     center: { lat: 36.1750231, lng: 127.7834302 }
   });
   
+  // const fishMarker = new google.maps.MarkerImage("/ex/images/ftv/icon/map_marker1.svg", null, null, null, new google.maps.Size(150,100));
+
+  var seaMakrer = new google.maps.MarkerImage(
+    "/ex/images/ftv/icon/map_marker1.svg",
+    new google.maps.Size(12, 20),
+    new google.maps.Point(0, 0),
+    new google.maps.Point(6, 20)
+ );
+
+
   if(JSON.stringify(islands) !== '{}'){
     for(const key in islands){
       console.log(islands[key][0].lat, islands[key][0].lon, key)
-      new google.maps.Marker({
+      new google.maps.marker({
         position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),
         map: map,
         label: {
           text : key,
           color: "#FFFFFF"},
         optimized: true,
-        icon: {
-          
-        },
+        icon: seaMakrer,
       });
     }
   }
