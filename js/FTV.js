@@ -389,14 +389,7 @@ function initMap(islands) {
     center: { lat: 36.1750231, lng: 127.7834302 }
   });
   
-  // const fishMarker = new google.maps.MarkerImage("/ex/images/ftv/icon/map_marker1.svg", null, null, null, new google.maps.Size(150,100));
-
-  var seaMakrer = new google.maps.MarkerImage(
-    "/ex/images/ftv/icon/map_marker1.svg",
-    new google.maps.Size(12, 20),
-    new google.maps.Point(0, 0),
-    new google.maps.Point(6, 20)
- );
+  // const fishMarker = new google.maps.MarkerImage("/ex/images/ftv/icon/map_marker1.svg", null, null, null, new google.maps.Size(100,100));
 
 
   if(JSON.stringify(islands) !== '{}'){
@@ -409,7 +402,6 @@ function initMap(islands) {
           text : key,
           color: "#FFFFFF"},
         optimized: true,
-        icon: seaMakrer,
       });
     }
   }
