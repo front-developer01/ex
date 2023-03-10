@@ -385,11 +385,12 @@ $.ajax({
 function initMap(islands) {
   
   const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 36.1750231, lng: 127.7834302 },
     zoom: 6,
-    center: { lat: 36.1750231, lng: 127.7834302 }
+    mapId: 'AIzaSyDGXqVI2iQwjccmV4YR07X6CyrjGNAsl_Y',
+    mapTypeId: google.maps.MapTypeId.HYBRID,
   });
-  
-  
+
   if(JSON.stringify(islands) !== '{}'){
     for(const key in islands){
       console.log(islands[key][0].lat, islands[key][0].lon, key)
@@ -398,19 +399,39 @@ function initMap(islands) {
         map: map,
         label: {
           text : key,
-          color: "#FFFFFF"},
+          color: "#fff"},
         optimized: true,
         icon: {
-          url: "/ex/images/ftv/icon/map_marker1.svg",
-          labelOrigin: new google.maps.Point(36.1750231 , 127.7834302),
-          anchor: new google.maps.Point(islands[key][0].lat, islands[key][0].lon),
-          // size: new google.maps.Size(100, 100),
+          url: "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_orange.png",
+          // labelOrigin: new google.maps.Point(-20, -10),
+          // anchor: new google.maps.Point(0,0)
         },
       });
+
     }
-    map.fitBounds(position);
   }
 };
+
+// if(JSON.stringify(islands) !== '{}'){
+//   for(const key in islands){
+//     console.log(islands[key][0].lat, islands[key][0].lon, key)
+//     new google.maps.Marker({
+//       position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),
+//       map: map,
+//       label: {
+//         text : key,
+//         color: "#FFFFFF"},
+//       optimized: true,
+//       icon: { 
+//         url: "http://maps.google.com/mapfiles/kml/paddle/blu-blank.png",
+//         // anchor: new google.maps.Point(0,0)
+//       },
+//     });
+
+//   }
+//   map.fitBounds(bounds);
+// }
+// };
 
 // -------------------------------------------------
 
