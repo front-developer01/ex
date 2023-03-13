@@ -365,6 +365,7 @@ $.ajax({
     var list = info.result.data;
     // console.log(list);
     const result = {};
+     console.log(result);
 
     // 섬가져오기
     for (const obj of list) {
@@ -399,7 +400,8 @@ function initMap(islands) {
         map: map,
         label: {
           text: key,
-          color: "yellow"
+          color: "yellow",
+          fontSize: "12px",
         },
         optimized: true,
         icon: {
@@ -408,15 +410,15 @@ function initMap(islands) {
           // anchor: new google.maps.Point(0,0)
         },
       });
-      for(const key in island){new google.maps.InfoWindow();
-      google.maps.event.addListener(marker, 'click', (function (marker) {
-        return function () {
-          //html로 표시될 인포 윈도우의 내용
-          infowindow.setContent(island[key][0].name);
-          //인포윈도우가 표시될 위치
-          infowindow.open(map, marker);
-        };
-      })(marker));};
+      // for(const key in island){new google.maps.InfoWindow();
+      // google.maps.event.addListener(marker, 'click', (function (marker) {
+      //   return function () {
+      //     //html로 표시될 인포 윈도우의 내용
+      //     infowindow.setContent(island[key][0].name);
+      //     //인포윈도우가 표시될 위치
+      //     infowindow.open(map, marker);
+      //   };
+      // })(marker));};
     }
   }
 };

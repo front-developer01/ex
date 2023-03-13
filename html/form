@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>$.ajax() 메서드</title>
+    <style>
+        table {
+            width: 450px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "data1.json",
+            dataType: "json",
+            success: function(data) {
+                var elem = "";
+                // console.log(date);
+
+                $.each(data, function(index, obj) {
+                    elem +=`<tr>`;
+                        elem +=`<th scope='row'>${obj.name}</th>`;
+                        elem +=`<td>${obj.score1}</td>`;
+                        elem +=`<td>${obj.score2}</td>`;
+                        elem +=`<td>${obj.score3}</td>`;
+                        elem +=`<td>${obj.score4}</td>`;
+                    elem +=`</tr>`;
+                });
+                $("table tbody").append(elem);
+            },
+            error: function(xhr) {
+                console.log(xhr.status + "/" + xhr.errorText);
+            },
+        });
+        // $.ajax({
+        //     type: "GET",
+        //     url: "data1.json",
+        //     dataType: "json",
+        //     // data1.json파일에서 {}는 각 객체를 의미하며, $.each()에서 obj라는 파라미터로 불림
+        //     success: function(data) { // 파라미터 data는 data1.json의 전체 데이터를 의미한다.
+        //         var elem = ""; // 빈 문자열 변수 생성
+        //         // console.log(data); // 배열 확인
+
+        //         $.each(data, function(index, obj) { // 배열형태의 data의 각 객체 obj에 접근한다 
+        //             // tr한줄을 완성하기 위해, 빈문자열로 만들어진 변수 elem에 추가 대입 시작
+        //             elem += `<tr>`;
+        //                 elem += `<th scope='row'>${obj.name}</th>`;
+        //                 elem += `<td>${obj.score1}</td>`;
+        //                 elem += `<td>${obj.score2}</td>`;
+        //                 elem += `<td>${obj.score3}</td>`;
+        //                 elem += `<td>${obj.score4}</td>`;
+        //             elem += `</tr>`;
+        //         });
+        //         $("table tbody").append(elem);
+        //     },
+        //     error: function(xhr) {
+        //         console.log(xhr.status + "/" + xhr.errorText);
+        //     }
+        // });
+    </script>
+</head>
+<body>
+    <table>
+        <caption>학생별 시험 점수</caption>
+        <thead>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">html</th>
+                <th scope="col">css</th>
+                <th scope="col">javascript</th>
+                <th scope="col">jQuery</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>
