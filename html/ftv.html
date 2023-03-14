@@ -50,7 +50,7 @@
                         <a href="https://smartstore.naver.com/eftv" target="_blank">스토어</a>
                     </li>
                     <li class="Bt">
-                        <span class="material-symbols-outlined close" style="font-size: 30px;">
+                        <span id="close" class="material-symbols-outlined close" style="font-size: 30px;">
                             close
                         </span>
                     </li>
@@ -73,17 +73,18 @@
     </header>
     <aside class="scroll">
         <div class="asideMenu">
-            <a href="https://www.naksinuri.kr/promotion/policy/m/list.do" target="_blank"><i
-                    class="fa-solid fa-fish-fins" style="font-size: 20px;" title="금어기 안내"></i></a>
+            <a href="https://www.naksinuri.kr/promotion/policy/m/list.do" target="_blank">
+                <img src="/ex/images/ftv/icon/no-fishing-icon.svg" alt title="금어기 안내">
+            </a>
             <a href="https://www.naksinuri.kr/" target="_blank">
-                <span class="material-symbols-outlined" style="font-size:20px;" title="낚시정보">
+                <span class="material-symbols-outlined" style="font-size:25px;" title="낚시정보">
                     auto_stories
                 </span>
             </a>
             <a href="https://korean.visitkorea.or.kr/search/search_list.do?keyword=%EB%82%9A%EC%8B%9C" target="_blank">
-                <span class="material-symbols-outlined" style="font-size:20px;" title="낚시축제">festival</span>
+                <span class="material-symbols-outlined" style="font-size:25px;" title="낚시축제">festival</span>
             </a>
-            <a href="#"><span class="material-symbols-outlined" style="font-size:20px;" title="TOP">
+            <a href="#"><span class="material-symbols-outlined" style="font-size:25px;" title="TOP">
                     vertical_align_top
                 </span></a>
         </div>
@@ -891,9 +892,32 @@
             </div>
             <div class="article07">
                 <div class="left">
-                    <h3>조황정보</h3>
+                    <h3>바다낚시지수</h3>
                     <div class="ocean">
                         <div id="map">map</div>
+                    </div>
+                    <div>
+                        <p>바다낚시지수 정보가 필요한 지역을 클릭하세요.</p>
+                    </div>
+                    <div id="alertInfo" class="oceanInfoAlert">
+                        <table>
+                            <caption class="localName">지역이름
+                                <span id="alertClose" class="material-symbols-outlined close" style="font-size: 30px;">close
+                                </span>
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">지역</th>
+                                    <th scope="col">날짜</th>
+                                    <th scope="col">시간</th>
+                                    <th scope="col">파고(m)</th>
+                                    <th scope="col">수온(℃)</th>
+                                    <th scope="col">기온(℃)</th>
+                                    <th scope="col">물때</th>
+                                    <th scope="col">낚시지수</th>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
                 <div class="right">
@@ -1059,8 +1083,6 @@
             </div>
         </div>
     </footer>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGXqVI2iQwjccmV4YR07X6CyrjGNAsl_Y&callback=initMap"
-    ></script> -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGXqVI2iQwjccmV4YR07X6CyrjGNAsl_Y&callback=initMap&v=weekly"
         defer></script>

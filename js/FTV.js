@@ -367,6 +367,22 @@ $.ajax({
     const result = {};
      console.log(result);
 
+     var elem = "";
+     console.log(elem);
+     $.each(list, function(index,obj) {
+       elem +=`<tr>`;
+           elem +=`<th scope='row'>${obj.name}</th>`;
+           elem +=`<td>${obj.date}</td>`;
+           elem +=`<td>${obj.time_type}</td>`;
+           elem +=`<td>${obj.wave_height}</td>`;
+           elem +=`<td>${obj.water_temp}</td>`;
+           elem +=`<td>${obj.air_temp}</td>`;
+           elem +=`<td>${obj.tide_time_score}</td>`;
+           elem +=`<td>${obj.total_score}</td>`;
+       elem +=`</tr>`;
+   });
+   $("table tbody").append(elem);
+
     // 섬가져오기
     for (const obj of list) {
       if (!result[obj['name']]) {
@@ -382,7 +398,6 @@ $.ajax({
   },
 });
 
-// Initialize and add the map
 function initMap(islands) {
 
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -394,8 +409,8 @@ function initMap(islands) {
 
   if (JSON.stringify(islands) !== '{}') {
     for (const key in islands) {
-      console.log(islands[key][0].lat, islands[key][0].lon, key)
-      new google.maps.Marker({
+      // console.log(islands[key][0].lat, islands[key][0].lon, key)
+      var marker =  new google.maps.Marker({
         position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),
         map: map,
         label: {
@@ -410,15 +425,15 @@ function initMap(islands) {
           // anchor: new google.maps.Point(0,0)
         },
       });
-      // for(const key in island){new google.maps.InfoWindow();
-      // google.maps.event.addListener(marker, 'click', (function (marker) {
-      //   return function () {
-      //     //html로 표시될 인포 윈도우의 내용
-      //     infowindow.setContent(island[key][0].name);
-      //     //인포윈도우가 표시될 위치
-      //     infowindow.open(map, marker);
-      //   };
-      // })(marker));};
+      const oceanInfoAlert = document.getElementById('alertInfo');
+      const alertclose = document.getElementById('alertClose');
+      let removeOn = () => {
+        oceanInfoAlert.classList.remove('on')
+      };
+      google.maps.event.addListener(marker,'click',function() {
+        oceanInfoAlert.classList.add('on');
+        alertclose.addEventListener('click', removeOn);
+      });
     }
   }
 };
@@ -456,21 +471,21 @@ function initMap(islands) {
 
 // --------------------------------------------------
 
-// //모바일 나브
-// window.onload = () => { };
-// const gnb = document.querySelector("ul.gnb01");
-// function addOn() {
-//   // this.classList.add("on");
-//   gnb.classList.add("on");
-//   // .classList는 IE9이하 버전에서는 작동하지 않는다.
-// }
-// let removeOn = () => {
-//   gnb.classList.remove("on");
-// };
-// const closeBt = document.querySelector(".close");
-// const mMenuBt = document.querySelector(".mMenuBt");
+//모바일 나브
+window.onload = () => { };
+const gnb = document.querySelector("ul.gnb01");
+function addOn() {
+  // this.classList.add("on");
+  gnb.classList.add("on");
+  // .classList는 IE9이하 버전에서는 작동하지 않는다.
+}
+let removeOn = () => {
+  gnb.classList.remove("on");
+};
+const closeBt = document.querySelector(".close");
+const mMenuBt = document.querySelector(".mMenuBt");
 
-// mMenuBt.addEventListener('click', addOn);
-// closeBt.addEventListener('click', removeOn);
+mMenuBt.addEventListener('click', addOn);
+closeBt.addEventListener('click', removeOn);
 
 

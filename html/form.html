@@ -5,7 +5,9 @@
     <title>$.ajax() 메서드</title>
     <style>
         table {
-            width: 450px;
+            width: 370px;
+            height: 480px;
+            border-radius: 10px;
             border-collapse: collapse;
         }
         th, td {
@@ -13,23 +15,29 @@
             text-align: center;
         }
     </style>
-    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
         $.ajax({
             type: "GET",
-            url: "data1.json",
+            url: "http://www.khoa.go.kr/api/oceangrid/fcIndexOfType/search.do?ServiceKey=hRYjS8/htbwC4t13ViXoQ==&Type=SF&ResultType=json",
             dataType: "json",
             success: function(data) {
-                var elem = "";
-                // console.log(date);
+                // var info = data;
+                var list = data.result.data;
+                console.log(list);
 
-                $.each(data, function(index, obj) {
+                var elem = "";
+
+                $.each(list, function(index, obj) {
                     elem +=`<tr>`;
                         elem +=`<th scope='row'>${obj.name}</th>`;
-                        elem +=`<td>${obj.score1}</td>`;
-                        elem +=`<td>${obj.score2}</td>`;
-                        elem +=`<td>${obj.score3}</td>`;
-                        elem +=`<td>${obj.score4}</td>`;
+                        elem +=`<td>${obj.date}</td>`;
+                        elem +=`<td>${obj.time_type}</td>`;
+                        elem +=`<td>${obj.wave_height}</td>`;
+                        elem +=`<td>${obj.water_temp}</td>`;
+                        elem +=`<td>${obj.air_temp}</td>`;
+                        elem +=`<td>${obj.tide_time_score}</td>`;
+                        elem +=`<td>${obj.total_score}</td>`;
                     elem +=`</tr>`;
                 });
                 $("table tbody").append(elem);
@@ -67,14 +75,17 @@
 </head>
 <body>
     <table>
-        <caption>학생별 시험 점수</caption>
+        <caption>거제도</caption>
         <thead>
             <tr>
-                <th scope="col">이름</th>
-                <th scope="col">html</th>
-                <th scope="col">css</th>
-                <th scope="col">javascript</th>
-                <th scope="col">jQuery</th>
+                <th scope="col">지역</th>
+                <th scope="col">날짜</th>
+                <th scope="col">시간</th>
+                <th scope="col">파고(m)</th>
+                <th scope="col">수온(℃)</th>
+                <th scope="col">기온(℃)</th>
+                <th scope="col">물때</th>
+                <th scope="col">낚시지수</th>
             </tr>
         </thead>
         <tbody></tbody>

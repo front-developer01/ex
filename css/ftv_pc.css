@@ -699,11 +699,47 @@
     transition: all 0.3s;
 }
 
+.article07 .left {
+    position: relative;
+}
+
 .article07 .left .ocean {
     width: 450px;
     height: 510px;
     border: 1px solid #000;
     border-radius: 10px;
+}
+
+.article07 .left .oceanInfoAlert {
+    width: 380px;
+    height: 400px;
+    background-color: #FFFFFF;
+    border: 1px solid #000;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 100;
+    top: 120px;
+    left: 40px;
+}
+
+.oceanInfoAlert table {
+    border-color: #000;
+    border-collapse: collapse;
+}
+
+.article07 .left .oceanInfoAlert {
+    display: none;
+}
+
+.article07 .left .oceanInfoAlert.on {
+    display: flex;
+}
+
+.article07 .left .localName span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
 }
 
 #map {
@@ -778,6 +814,7 @@
     width: 100%;
     height: 115px;
 }
+
 
 .article07 .right .agency .swiper-wrapper .swiper-slide {
     display: flex;
