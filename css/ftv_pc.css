@@ -711,20 +711,48 @@
 }
 
 .article07 .left .oceanInfoAlert {
-    width: 380px;
+    width: 430px;
     height: 400px;
-    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background:rgba(255, 255, 255, 1);
     border: 1px solid #000;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     position: absolute;
     z-index: 100;
     top: 120px;
-    left: 40px;
+    left: 10px;
+    padding: 10px 10px;
+    overflow: scroll;
 }
 
-.oceanInfoAlert table {
+.article07 .left .oceanInfoAlert p {
+    width: 100%;
+    font-size: 0.8125rem;
+}
+
+.article07 .left .oceanInfoAlert .chart {
+    width: 400px;
+    height: 350px;
+    padding: 10px 10px;
+    font-size: 1rem;
+    padding: 5px 5px;
+    text-align: center;
     border-color: #000;
     border-collapse: collapse;
+    overflow: scroll;
+}
+
+.chart th, td {
+    border: 1px solid #000;
+    text-align: center;
+    /* overflow: scroll; */
+}
+
+.chart tbody {
+    width: 100%;
+    height: 100%;
 }
 
 .article07 .left .oceanInfoAlert {
@@ -738,7 +766,7 @@
 .article07 .left .localName span {
     position: absolute;
     top: 0;
-    right: 10px;
+    right: 0px;
     cursor: pointer;
 }
 

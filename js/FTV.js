@@ -365,23 +365,26 @@ $.ajax({
     var list = info.result.data;
     // console.log(list);
     const result = {};
-     console.log(result);
+    
+    const text = document.createTextNode(`거문도`);
+    const local = document.getElementById("localName");
+    local.appendChild(text);
 
-     var elem = "";
-     console.log(elem);
-     $.each(list, function(index,obj) {
-       elem +=`<tr>`;
-           elem +=`<th scope='row'>${obj.name}</th>`;
-           elem +=`<td>${obj.date}</td>`;
-           elem +=`<td>${obj.time_type}</td>`;
-           elem +=`<td>${obj.wave_height}</td>`;
-           elem +=`<td>${obj.water_temp}</td>`;
-           elem +=`<td>${obj.air_temp}</td>`;
-           elem +=`<td>${obj.tide_time_score}</td>`;
-           elem +=`<td>${obj.total_score}</td>`;
-       elem +=`</tr>`;
-   });
-   $("table tbody").append(elem);
+    var point = list.filter((e => e.name === "거문도"))
+    var elem = "";
+    $.each(point, function(index, obj) {
+      elem +=`<tr>`;
+            elem +=`<td>${obj.date.slice(5,10)}</td>`;
+            elem +=`<td>${obj.time_type}</td>`;
+            elem +=`<td>${obj.fish_name}</td>`;
+            //  elem +=`<td>${obj.wave_height}</td>`;
+            //  elem +=`<td>${obj.water_temp}</td>`;
+            elem +=`<td>${obj.air_temp}</td>`;
+            elem +=`<td>${obj.tide_time_score}</td>`;
+            elem +=`<td>${obj.total_score}</td>`;
+        elem +=`</tr>`;
+     });
+     $("table tbody").append(elem);
 
     // 섬가져오기
     for (const obj of list) {
@@ -410,6 +413,10 @@ function initMap(islands) {
   if (JSON.stringify(islands) !== '{}') {
     for (const key in islands) {
       // console.log(islands[key][0].lat, islands[key][0].lon, key)
+    
+    var elem = islands[key][0].name
+     $("localName").append(elem);
+
       var marker =  new google.maps.Marker({
         position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),
         map: map,

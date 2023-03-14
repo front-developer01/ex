@@ -900,24 +900,28 @@
                         <p>바다낚시지수 정보가 필요한 지역을 클릭하세요.</p>
                     </div>
                     <div id="alertInfo" class="oceanInfoAlert">
-                        <table>
-                            <caption class="localName">지역이름
+                        <table class="chart">
+                            <caption id="localName">
                                 <span id="alertClose" class="material-symbols-outlined close" style="font-size: 30px;">close
                                 </span>
                             </caption>
                             <thead>
                                 <tr>
-                                    <th scope="col">지역</th>
                                     <th scope="col">날짜</th>
                                     <th scope="col">시간</th>
+                                    <th scope="col">대상어</th>
                                     <th scope="col">파고(m)</th>
-                                    <th scope="col">수온(℃)</th>
-                                    <th scope="col">기온(℃)</th>
+                                    <!-- <th scope="col">수온(℃)</th> -->
+                                    <!-- <th scope="col">기온(℃)</th> -->
                                     <th scope="col">물때</th>
                                     <th scope="col">낚시지수</th>
                                 </tr>
                             </thead>
+                            <tbody></tbody>
                         </table>
+                        <p>※자료출처: 국립해양조사원 바다누리 OpenAPI (생활해양예보지수)</p>
+                        <p>※ 수치예측결과를 활용한 자료로서 실제와 다를 수 있으니 현장의 해양·기상 상황을 반드시 확인하시기 바랍니다. </p>
+                        <p>※ 항만법에서 지정한 항만구역 및 항만시설과 지자체 등에서 고시한 낚시 통제 구역에서 낚시 행위를 할 경우 관련 법령에 따라 처벌 받을 수 있으니 출조 지역의 낚시 가능 여부를 반드시 확인 하시기 바랍니다.</p>
                     </div>
                 </div>
                 <div class="right">

@@ -25,10 +25,12 @@
                 // var info = data;
                 var list = data.result.data;
                 console.log(list);
-
+                
+                var geomundo = list.filter((e => e.name === "거문도"))
                 var elem = "";
 
-                $.each(list, function(index, obj) {
+                $.each(geomundo, function(index, obj) {
+                    
                     elem +=`<tr>`;
                         elem +=`<th scope='row'>${obj.name}</th>`;
                         elem +=`<td>${obj.date}</td>`;
@@ -78,8 +80,8 @@
         <caption>거제도</caption>
         <thead>
             <tr>
-                <th scope="col">지역</th>
                 <th scope="col">날짜</th>
+                <th scope="col">어종</th>
                 <th scope="col">시간</th>
                 <th scope="col">파고(m)</th>
                 <th scope="col">수온(℃)</th>
