@@ -43,3 +43,20 @@ var swiper = new Swiper(".push", {
     });
   });
   tabBt[0].click(); // 첫번째 탭 켜기
+
+  //모바일 나브
+window.onload = () => { };
+const gnb = document.querySelector("ul.gnb01");
+function addOn() {
+  // this.classList.add("on");
+  gnb.classList.add("on");
+  // .classList는 IE9이하 버전에서는 작동하지 않는다.
+}
+let removeOn = () => {
+  gnb.classList.remove("on");
+};
+const closeBt = document.querySelector(".close");
+const mMenuBt = document.querySelector(".mMenuBt");
+
+mMenuBt.addEventListener('click', addOn);
+closeBt.addEventListener('click', removeOn);
