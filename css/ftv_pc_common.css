@@ -282,8 +282,6 @@ footer .inner .text .top .sns {
     height: 25px;
     display: flex;
     flex-direction: row;
-    text-indent: -9000px;
-    overflow: hidden;
     justify-content: space-between;
     /* gap: 25px; */
 }
