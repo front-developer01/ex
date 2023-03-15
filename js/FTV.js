@@ -363,15 +363,16 @@ $.ajax({
     var info = data;
     // console.log(info.result.data);
     var list = info.result.data;
-    // console.log(list);
+    console.log(list);
     const result = {};
-    
-    const text = document.createTextNode(`거문도`);
-    const local = document.getElementById("localName");
-    local.appendChild(text);
 
+          const text = document.createTextNode('point');
+      let local = document.getElementById("localName");
+      local.appendChild(text);
+    
     var point = list.filter((e => e.name === "거문도"))
     var elem = "";
+
     $.each(point, function(index, obj) {
       elem +=`<tr>`;
             elem +=`<td>${obj.date.slice(5,10)}</td>`;
@@ -412,11 +413,8 @@ function initMap(islands) {
 
   if (JSON.stringify(islands) !== '{}') {
     for (const key in islands) {
-      // console.log(islands[key][0].lat, islands[key][0].lon, key)
-    
-    var elem = islands[key][0].name
-     $("localName").append(elem);
-
+      console.log(islands[key][0].lat, islands[key][0].lon, key)
+     
       var marker =  new google.maps.Marker({
         position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),
         map: map,
@@ -441,6 +439,11 @@ function initMap(islands) {
         oceanInfoAlert.classList.add('on');
         alertclose.addEventListener('click', removeOn);
       });
+
+      // const text = document.createTextNode();
+      // let local = document.getElementById("localName");
+      // local.appendChild(text);
+
     }
   }
 };
