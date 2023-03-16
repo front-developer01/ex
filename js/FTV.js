@@ -1,3 +1,5 @@
+window.onload = () => {
+
 // full banner
 var banner = new Swiper(".banner", {
   navigation: {
@@ -36,8 +38,6 @@ var timeline = new Swiper(".timeline", {
     },
   },
 });
-
-window.onload = () => {};
   
   setInterval(() => {
     const date = new Intl.DateTimeFormat("ko", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
@@ -477,7 +477,6 @@ function initMap(islands) {
 // --------------------------------------------------
 
 //모바일 나브
-window.onload = () => { };
 const gnb = document.querySelector("ul.gnb01");
 function addOn() {
   // this.classList.add("on");
@@ -493,4 +492,4 @@ const mMenuBt = document.querySelector(".mMenuBt");
 mMenuBt.addEventListener('click', addOn);
 closeBt.addEventListener('click', removeOn);
 
-
+};
