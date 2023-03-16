@@ -1,7 +1,14 @@
 var swiper = new Swiper(".push", {
     slidesPerView: 1,
     spaceBetween: 0,
+    observer: true,
+    observeParents: true,
     touchRatio:0,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
     breakpoints: {
       600: {
       slidesPerView: 2,
@@ -15,18 +22,6 @@ var swiper = new Swiper(".push", {
       },
     },
   });
-
-//   window.addEventListener('resize', () => {
-//     let wiw = window.innerWidth;
-
-//     if (wiw < 600) {
-//         swiper.off();
-//     } else {
-//         swiper.on();
-//     }
-// });
-
-  // swiper.destroy(deleteInstance, cleanStyles)
 
   let tabBt = document.querySelectorAll('.tabBt > button'); // 탭버튼
   Array.from(tabBt).forEach((eachButton, index) => {

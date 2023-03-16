@@ -300,11 +300,6 @@
     margin: 0;
 }
 
-/* .tabContent01 .new .swiper-wrapper {
-    display: block;
-    display: flex;
-} */
-
 .tabContent01 .new .swiper-wrapper div {
     width: 270px;
     height: 330px;
@@ -313,11 +308,6 @@
     align-items: flex-start;
     gap: 5px;
 }
-
-/* .tabContent01 .best .swiper-wrapper {
-    display: block;
-    display: flex;
-} */
 
 .best .swiper-wrapper div {
     width: 270px;
@@ -458,8 +448,8 @@
 .sec02 .inner {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin: 20px 0 0 0;
+    gap: 30px;
+    margin: 40px 0 0 0;
 }
 
 .sec02 .inner .tabButton02 {
