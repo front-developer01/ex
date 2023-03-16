@@ -1,8 +1,8 @@
 // full banner
 var banner = new Swiper(".banner", {
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".control01 > .swiper-button-next",
+    prevEl: ".control01 > .swiper-button-prev",
   },
   pagination: {
     el: ".swiper-pagination",
@@ -32,19 +32,13 @@ var timeline = new Swiper(".timeline", {
     1200: {
       slidesPerView: 5,
       spaceBetween: 0,
-      navigation: {
-        nextEl: ".control02 > .swiper-button-next",
-        prevEl: ".control02 > .swiper-button-prev",
-      },
       centeredSlides: true,
     },
   },
 });
 
-// --------------------------------------------
-
-window.onload = () => {
-
+window.onload = () => {};
+  
   setInterval(() => {
     const date = new Intl.DateTimeFormat("ko", { hour12: false, hour: "2-digit", minute: "2-digit" }).format(new Date());
     // console.log(date.toString());
@@ -62,7 +56,7 @@ window.onload = () => {
       if (index === list.length - 1) {
         h3.classList.add('active');
         break;
-      }
+      };
 
       var currentProgramTime = span.innerText.substr(3);
       var nextProgramTime = list[index + 1].children[1].innerText.substr(3);
@@ -72,12 +66,11 @@ window.onload = () => {
         h3.classList.add('active');
         timeline.slideTo(index, 0, true);
         break;
-      }
+      };
     };
   }, 1000);
-};
 
-// ----------------------------
+// --------------------------------------------
 
 // 최신 프로그램
 var swiper01 = new Swiper(".new", {
@@ -93,8 +86,8 @@ var swiper01 = new Swiper(".new", {
       slidesPerView: 4,
       spaceBetween: 40,
       navigation: {
-        nextEl: ".control03 > .swiper-button-next",
-        prevEl: ".control03 > .swiper-button-prev",
+        nextEl: ".control02 > .swiper-button-next",
+        prevEl: ".control02 > .swiper-button-prev",
       },
     },
   },
@@ -119,8 +112,8 @@ var swiper02 = new Swiper(".swiper.best", {
       slidesPerView: 4,
       spaceBetween: 40,
       navigation: {
-        nextEl: ".control03 > .swiper-button-next",
-        prevEl: ".control03 > .swiper-button-prev",
+        nextEl: ".control02 > .swiper-button-next",
+        prevEl: ".control02 > .swiper-button-prev",
       },
     },
   },
@@ -269,8 +262,8 @@ var swiper09 = new Swiper(".youtube", {
       slidesPerView: 5,
       spaceBetween: 25,
       navigation: {
-        nextEl: ".control04 > .swiper-button-next",
-        prevEl: ".control04 > .swiper-button-prev",
+        nextEl: ".control03 > .swiper-button-next",
+        prevEl: ".control03 > .swiper-button-prev",
       },
     },
   },
@@ -296,8 +289,8 @@ var swiper10 = new Swiper(".free", {
       slidesPerView: 5,
       spaceBetween: 25,
       navigation: {
-        nextEl: ".control05 > .swiper-button-next",
-        prevEl: ".control05 > .swiper-button-prev",
+        nextEl: ".control04 > .swiper-button-next",
+        prevEl: ".control04 > .swiper-button-prev",
       },
     },
   },
@@ -414,8 +407,8 @@ function initMap(islands) {
 
   if (JSON.stringify(islands) !== '{}') {
     for (const key in islands) {
-      console.log(islands[key][0].lat, islands[key][0].lon, key)
-      console.log(islands, key)
+      // console.log(islands[key][0].lat, islands[key][0].lon, key)
+      // console.log(islands, key)
      
       var marker =  new google.maps.Marker({
         position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),

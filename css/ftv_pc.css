@@ -122,7 +122,6 @@
     width: 1200px;
     height: 240px;
     margin: 0 auto;
-    position: relative;
 }
 
 .article02 h2 {
@@ -136,39 +135,6 @@
     height: 160px;
     overflow: hidden;
     margin: 0 auto;
-}
-
-.timeline .control02 div {
-    width: 35px;
-    height: 35px;
-    border: 1px solid transparent;
-}
-
-.article03 .control03 div:nth-of-type(2) {
-    width: 35px;
-    height: 35px;
-    border: 1px solid #000;
-    position: absolute;
-    top: 49%;
-    left: 1120px;
-}
-
-.timeline .control02 .swiper-button-next::after {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 1.25rem;
-    font-weight: 800;
-    position: absolute;
-    top: 7.5px;
-    right: 10px;
-}
-
-.timeline .control02 .swiper-button-prev::after {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 1.25rem;
-    font-weight: 800;
-    position: absolute;
-    top: 7.5px;
-    left: 10px;
 }
 
 .timeline .swiper-wrapper .swiper-slide {
@@ -258,12 +224,12 @@
     border: 1px solid transparent;
 }
 
-.article03 .control03 {
+.article03 .control02 {
     width: 100%;
     height: 40px;
 }
 
-.article03 .control03 div {
+.article03 .control02 div {
     width: 35px;
     height: 35px;
     border: 1px solid #000;
@@ -272,7 +238,16 @@
     left: 1165px;
 }
 
-.article03 .control03 div:nth-of-type(2) {
+.article03 .control02 div:nth-of-type(2) {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 49%;
+    left: 1120px;
+}
+
+.article03 .control02 div:nth-of-type(2) {
     width: 35px;
     height: 35px;
     border: 1px solid #000;
@@ -280,7 +255,7 @@
     top: -33px;
 }
 
-.article03 .control03 .swiper-button-next::after {
+.article03 .control02 .swiper-button-next::after {
     color:#000;
     font-size: 1.25rem;
     font-weight: 800;
@@ -290,7 +265,7 @@
     margin: 0;
 }
 
-.article03 .control03 .swiper-button-prev::after {
+.article03 .control02 .swiper-button-prev::after {
     color:#000;
     font-size: 1.25rem;
     font-weight: 800;
@@ -544,7 +519,7 @@
     position: relative;
 }
 
-.article05 .control04 div {
+.article05 .control03 div {
     width: 35px;
     height: 35px;
     border: 1px solid #000;
@@ -553,7 +528,7 @@
     right: 0;
 }
 
-.article05 .control04 div:nth-of-type(2) {
+.article05 .control03 div:nth-of-type(2) {
     width: 35px;
     height: 35px;
     border: 1px solid #000;
@@ -562,7 +537,7 @@
     left: 1120px;
 }
 
-.article05 .control04 .swiper-button-next::after {
+.article05 .control03 .swiper-button-next::after {
     color:#000;
     font-size: 1.25rem;
     font-weight: 800;
@@ -571,7 +546,7 @@
     right: 10px;
 }
 
-.article05 .control04 .swiper-button-prev::after {
+.article05 .control03 .swiper-button-prev::after {
     color:#000;
     font-size: 1.25rem;
     font-weight: 800;
@@ -623,7 +598,7 @@
     position: relative;
 }
 
-.article06 .control05 div {
+.article06 .control04 div {
     width: 35px;
     height: 35px;
     border: 1px solid #000;
@@ -632,7 +607,7 @@
     right: 0;
 }
 
-.article06 .control05 div:nth-of-type(2) {
+.article06 .control04 div:nth-of-type(2) {
     width: 35px;
     height: 35px;
     border: 1px solid #000;
@@ -641,7 +616,7 @@
     left: 1120px;
 }
 
-.article06 .control05 .swiper-button-next::after {
+.article06 .control04 .swiper-button-next::after {
     color:#000;
     font-size: 1.25rem;
     font-weight: 800;
@@ -650,7 +625,7 @@
     right: 10px;
 }
 
-.article06 .control05 .swiper-button-prev::after {
+.article06 .control04 .swiper-button-prev::after {
     color:#000;
     font-size: 1.25rem;
     font-weight: 800;
