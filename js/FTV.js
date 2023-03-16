@@ -364,7 +364,7 @@ $.ajax({
     var info = data;
     // console.log(info.result.data);
     var list = info.result.data;
-    console.log(list);
+    // console.log(list);
     const result = {};
 
           const text = document.createTextNode('point');
@@ -415,6 +415,7 @@ function initMap(islands) {
   if (JSON.stringify(islands) !== '{}') {
     for (const key in islands) {
       console.log(islands[key][0].lat, islands[key][0].lon, key)
+      console.log(islands, key)
      
       var marker =  new google.maps.Marker({
         position: new google.maps.LatLng(islands[key][0].lat, islands[key][0].lon),
