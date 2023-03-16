@@ -28,7 +28,6 @@ var timeline = new Swiper(".timeline", {
     431: {
       slidesPerView: 4,
       spaceBetween: 0,
-      loop: true,
     },
     1200: {
       slidesPerView: 5,
@@ -37,7 +36,6 @@ var timeline = new Swiper(".timeline", {
         nextEl: ".control02 > .swiper-button-next",
         prevEl: ".control02 > .swiper-button-prev",
       },
-      loop: true,
       centeredSlides: true,
     },
   },
@@ -90,7 +88,6 @@ var swiper01 = new Swiper(".new", {
     431: {
       slidesPerView: 3,
       spaceBetween: 30,
-      loop: true,
     },
     1200: {
       slidesPerView: 4,
@@ -99,7 +96,6 @@ var swiper01 = new Swiper(".new", {
         nextEl: ".control03 > .swiper-button-next",
         prevEl: ".control03 > .swiper-button-prev",
       },
-      loop: true,
     },
   },
 });
@@ -118,7 +114,6 @@ var swiper02 = new Swiper(".swiper.best", {
     431: {
       slidesPerView: 3,
       spaceBetween: 30,
-      // loop: true,
     },
     1200: {
       slidesPerView: 4,
@@ -157,6 +152,9 @@ tabButton01[0].click(); // 첫번째 탭 켜기
 var swiper05 = new Swiper(".overall", {
   slidesPerView: 1,
   spaceBetween: 0,
+  pagination: {
+    el: ".swiper-pagination",
+  },
   breakpoints: {
     431: {
       slidesPerView: 2,
@@ -175,6 +173,9 @@ var swiper05 = new Swiper(".overall", {
 var swiper06 = new Swiper(".freshwater", {
   slidesPerView: 1,
   spaceBetween: 0,
+  pagination: {
+    el: ".swiper-pagination",
+  },
   breakpoints: {
     431: {
       slidesPerView: 2,
@@ -193,6 +194,9 @@ var swiper06 = new Swiper(".freshwater", {
 var swiper07 = new Swiper(".sea", {
   slidesPerView: 1,
   spaceBetween: 0,
+  pagination: {
+    el: ".swiper-pagination",
+  },
   breakpoints: {
     431: {
       slidesPerView: 2,
@@ -211,6 +215,9 @@ var swiper07 = new Swiper(".sea", {
 var swiper08 = new Swiper(".lure", {
   slidesPerView: 1,
   spaceBetween: 0,
+  pagination: {
+    el: ".swiper-pagination",
+  },
   breakpoints: {
     431: {
       slidesPerView: 2,
@@ -253,12 +260,10 @@ var swiper09 = new Swiper(".youtube", {
     431: {
       slidesPerView: 3,
       spaceBetween: 20,
-      loop: true,
     },
     800: {
       slidesPerView: 4,
       spaceBetween: 20,
-      loop: true,
     },
     1200: {
       slidesPerView: 5,
@@ -267,7 +272,6 @@ var swiper09 = new Swiper(".youtube", {
         nextEl: ".control04 > .swiper-button-next",
         prevEl: ".control04 > .swiper-button-prev",
       },
-      loop: true,
     },
   },
 });
@@ -283,12 +287,10 @@ var swiper10 = new Swiper(".free", {
     431: {
       slidesPerView: 3,
       spaceBetween: 20,
-      loop: true,
     },
     800: {
       slidesPerView: 4,
       spaceBetween: 20,
-      loop: true,
     },
     1200: {
       slidesPerView: 5,
@@ -297,7 +299,6 @@ var swiper10 = new Swiper(".free", {
         nextEl: ".control05 > .swiper-button-next",
         prevEl: ".control05 > .swiper-button-prev",
       },
-      loop: true,
     },
   },
 });

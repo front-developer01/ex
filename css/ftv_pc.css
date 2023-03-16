@@ -194,10 +194,7 @@
 .timeline .swiper-wrapper .swiper-slide h3.active {
     border-bottom: 4px solid #2f4693;
 }
-/* .timeline .swiper-wrapper .swiper-slide.swiper-slide-active h3{
 
-    border-bottom: 4px solid #2f4693;
-} */
 .timeline .swiper-wrapper .swiper-slide span {
     font-size: 0.9375rem;
     font-weight: 700;
@@ -216,7 +213,7 @@
 
 .article03 .inner {
     width: 1200px;
-    height: 450px;
+    height: 400px;
     margin: 0 auto;
 }
 
@@ -461,11 +458,11 @@
 .sec02 .inner {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    margin: 20px 0 0 0;
 }
 
 .sec02 .inner .tabButton02 {
-
     display: flex;
     align-items: center;
     margin: 0;
@@ -491,7 +488,14 @@
     /* border: 1px solid transparent; */
 }
 
-.sec02 .tabContent02 .overall .swiper-wrapper {
+.tabContent02 .overall, .freshwater,
+.sea, .lure {
+    width: 100%;
+    height: 290px;
+}
+
+.sec02 .tabContent02 .swiper-wrapper {
+    height: 250px;
     display: block;
     display: flex;
 }
