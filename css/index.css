@@ -1,0 +1,139 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* Noto Sans KR 폰트 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+/* font-awesome url버전에 따라 폰트가 달리 나올 수 있음 */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    word-break: keep-all;
+    list-style: none;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper {
+  position: relative;
+  width: 50%;
+  height: 60%;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.pages {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 60%;
+  left: -25%;
+}
+
+.swiper-pagination-bullet{
+  width: 100px;
+  height: 50px;
+  color: #000;
+  background: none;
+}
+
+.swiper-pagination-bullet span{
+  font-size: 1.875rem;
+  font-weight: 800;
+}
+
+.swiper-pagination-bullet-active {
+  width: 100px;
+  height: 50px;
+  background: none;
+  color: rgba(0, 0, 0, .5);
+}
+
+.swiper-slide:nth-child(1n) {
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, .5);
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.swiper-slide:nth-child(1n) h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.swiper-slide:nth-child(1n) .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.swiper-slide:nth-child(2n) {
+  background: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(3n) {
+  background: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+  color: #fff;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  background: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(4n) h2 {
+  font-size: 2.5rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.swiper-slide:nth-child(4n) h3 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.swiper-slide:nth-child(4n) .mail,
+.swiper-slide:nth-child(4n) .phoneNumber {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* justify-content: center; */
+}
+
+.swiper-slide:nth-child(4n) span{
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+}
