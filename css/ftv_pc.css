@@ -738,6 +738,7 @@
     height: 30px;
     font-size: 1.25rem;
     font-weight: 600;
+    position: inherit;
     line-height: 1;
     text-align: center;
 }
@@ -746,6 +747,7 @@
     position: absolute;
     top: 2%;
     right: 1%;
+    z-index: 100;
     cursor: pointer;
 }
 
