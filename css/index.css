@@ -27,11 +27,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+  
 .swiper {
   position: relative;
-  width: 50%;
-  height: 60%;
+  width: 60%;
+  height: 80%;
 }
 
 .swiper-slide {
@@ -45,16 +45,13 @@ body {
 }
 
 .pages {
-  display: flex;
-  flex-direction: row;
   position: absolute;
   top: 60%;
-  left: -25%;
+  left: -20%;
 }
 
-.swiper-pagination-bullet{
-  width: 100px;
-  height: 50px;
+.swiper-pagination-bullet {
+  width: 20%;
   color: #000;
   background: none;
 }
@@ -65,74 +62,153 @@ body {
 }
 
 .swiper-pagination-bullet-active {
-  width: 100px;
-  height: 50px;
+  width: 20%;
   background: none;
   color: rgba(0, 0, 0, .5);
 }
 
-.swiper-slide:nth-child(1n) {
+.swiper-slide {
   color: #000;
-  border: 1px solid rgba(0, 0, 0, .5);
   background: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) inset;
 }
 
-.swiper-slide:nth-child(1n) h2 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  text-align: center;
-}
-
-.swiper-slide:nth-child(1n) .info {
+.swiper-slide.slide1 {
+  color: #000;
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) inset;
+  overflow: hidden;
 }
 
-.swiper-slide:nth-child(2n) {
-  background: rgb(0, 140, 255);
-}
-
-.swiper-slide:nth-child(3n) {
-  background: rgb(10, 184, 111);
-}
-
-.swiper-slide:nth-child(4n) {
-  color: #fff;
-  border: none;
+.slide1 .animate__fadeInUp .mainText {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide.slide1 .mainText h2 {
+  font-size: 7.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.swiper-slide.slide1 .mainText span {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 10px 10px;
+  color: rgba(0, 0, 0, .5);
+  text-align: center;
+}
+
+.swiper-slide.slide1.slide1 .mainText p {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, .5);
+  text-align: center;
+}
+
+.swiper-slide.slide2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
   gap: 40px;
-  background: rgb(0, 140, 255);
 }
 
-.swiper-slide:nth-child(4n) h2 {
+.swiper-slide.slide2 h2 {
+  font-size: 4rem;
+}
+
+.swiper-slide.slide2 h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #69f;
+}
+
+.swiper-slide.slide2 .infoWrap {
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.swiper-slide.slide2 .infoWrap ul {
+  padding: 5px 0 5px 20px;
+}
+
+.swiper-slide.slide2 span {
+  width: 80px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .8);
+}
+
+.swiper-slide.slide2 p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .5);
+}
+
+.swiper-slide.slide2 .infoWrap .right span {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .8);
+}
+
+.swiper-slide.slide2 .infoWrap .left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.swiper-slide.slide2 .infoWrap .left .profile li {
+  display: flex;
+}
+
+.swiper-slide.slide2 .infoWrap .right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.swiper-slide.slide2 .infoWrap .right ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-slide:nth-child(3n) {
+  color: #000;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) inset;
+}
+
+.swiper-slide.slide5 {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.swiper-slide.slide5 h2 {
   font-size: 2.5rem;
-  line-height: 1;
   text-align: center;
 }
 
-.swiper-slide:nth-child(4n) h3 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  text-align: center;
-}
-
-.swiper-slide:nth-child(4n) .mail,
-.swiper-slide:nth-child(4n) .phoneNumber {
+.swiper-slide.slide5 .mail,
+.swiper-slide.slide5 .phoneNumber {
   display: flex;
   align-items: center;
-  gap: 20px;
-  /* justify-content: center; */
+  gap: 40px;
 }
 
-.swiper-slide:nth-child(4n) span{
+.swiper-slide.slide5 p {
   font-size: 2.5rem;
   font-weight: 500;
   text-align: center;
